@@ -20,15 +20,6 @@ Nossa pedagogia baseada em prática permite que você aprenda enquanto construi,
 
 # Começando
 
-> **Professores**, nós incluímos algumas [sugestões](for-teachers.pt.md) sobre como utilizar este curso. Adoraríamos o seu Feedback em nosso [fórum](https://github.com/microsoft/Web-Dev-For-Beginners/discussions/categories/teacher-corner)!
-
-> **Estudantes**, para usar esse currículo por conta própria, faça um fork do repositório inteiro, começando por um quiz pré-aula, veja a aula e então faça o resto das atividades.
-Procure fazer os projetos baseado no que aprendeu ao invés de simplesmente copiar a solução que se encontra na pasta de soluções das atividades.
-Uma boa opção seria criar um grupo de estudos e completar todos os conteúdos juntos.
-Para estudos mais profundos, recomendamos que assista aos vídeos mencionados abaixo e procure pelo [Microsoft Learn](https://docs.microsoft.com/users/jenlooper-2911/collections/jg2gax8pzd6o81/?WT.mc_id=academic-77807-sagibbon).
-
-[![Promo video](../images/web.gif)](https://youtube.com/watch?v=R1wrdtmBSII "Promo video")
-
 > 🎥 Clique na imagem acima para acessar um vídeo sobre o projeto e aqueles que o criaram !
 
 ## Pedagogia
