@@ -1,6 +1,5 @@
 # Noções básicas de JavaScript: Tomando Decisões
-![Noções básicas de JavaScript - Tomando Decisões](/sketchnotes/webdev101-js-decisions.png)
-> Sketchnote by [Tomomi Imura](https://twitter.com/girlie_mac)
+![Noções básicas de JavaScript - Tomando Decisões](https://github.com/CursoExtensaoUFSC/DesenvolvimenteWebUFSC/blob/main/Arquivos/webdev101-js-decisions.png)
 
 ## Quiz Pré-Aula
 [Quiz Pré-Aula](https://ashy-river-0debb7803.1.azurestaticapps.net/quiz/11)
