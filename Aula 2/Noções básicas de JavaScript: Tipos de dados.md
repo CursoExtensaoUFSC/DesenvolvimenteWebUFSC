@@ -1,7 +1,6 @@
 # Noções básicas de JavaScript: Tipos de dados
 
-![Noções básicas de JavaScript: Tipos de dados](/sketchnotes/webdev101-js-datatypes.png)
-> Sketchnote por [Tomomi Imura](https://twitter.com/girlie_mac)
+![Noções básicas de JavaScript: Tipos de dados](https://github.com/CursoExtensaoUFSC/DesenvolvimenteWebUFSC/blob/main/Arquivos/webdev101-js-datatypes.png)
 
 ## Quiz Pré-Aula
 [Quiz Pré-Aula](https://ashy-river-0debb7803.1.azurestaticapps.net/quiz/7)
