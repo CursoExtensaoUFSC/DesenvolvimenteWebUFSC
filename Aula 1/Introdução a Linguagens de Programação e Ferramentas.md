@@ -4,8 +4,6 @@ Essa lição trata dos básicos de linguagens de programação. Os tópicos trat
 
 ![Introdução à Programação](https://github.com/CursoExtensaoUFSC/DesenvolvimenteWebUFSC/blob/main/Arquivos/webdev101-programming.png)
 
-> Sketchnote por [Tomomi Imura](https://twitter.com/girlie_mac)
-
 ## Quiz Pré-Lição
 
 [Quiz Pré-Lição](https://ashy-river-0debb7803.1.azurestaticapps.net/quiz/1)
