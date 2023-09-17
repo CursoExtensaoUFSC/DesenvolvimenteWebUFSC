@@ -18,9 +18,6 @@ Nossa pedagogia baseada em prática permite que você aprenda enquanto construi,
 
 **Grandes agradecimentos aos nossos autores Jen Looper, Chris Noring, Christopher Harrison, Jasmine Greenaway, Yohan Lasorsa, Floor Drees, e Tomomi Imura!**
 
-# Começando
-
-> 🎥 Clique na imagem acima para acessar um vídeo sobre o projeto e aqueles que o criaram !
 
 ## Pedagogia
 
