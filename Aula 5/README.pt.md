@@ -129,4 +129,4 @@ As arrays em JavaScript têm muitos métodos ligados a elas, extremamente úteis
 
 ## Atribuição
 
-[Laçar um Array](assignment.pt.md)
+[Laçar um Array](assignment5.pt.md)
