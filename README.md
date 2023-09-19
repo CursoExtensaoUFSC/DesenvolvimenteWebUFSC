@@ -23,9 +23,6 @@ Embora tenhamos evitado propositadamente a introdução de frameworks JavaScript
 [Coletânea inicial sobre Node.js](https://channel9.msdn.com/Series/Beginners-Series-to-Nodejs/?WT.mc_id=academic-77807-sagibbon)
 
 
-> Encontre nosso [código de conduta](CODE_OF_CONDUCT.md), [guia para contribuidores](CONTRIBUTING.md), e [o guia para traduções do curso](TRANSLATIONS.md).
-Seu Feedback construtivo é bem vindo.
-
 
 
 ## Cada lição inclui:
