@@ -227,5 +227,5 @@ Sempre verifique os recursos do navegador usando [CanIUse](https://caniuse.com/)
 ## Tarefa
 ---
 
-[Trabalhar um pouco mais com o DOM](assignment.pt.md)
+[Trabalhar um pouco mais com o DOM](assignment8.pt.md)
 
