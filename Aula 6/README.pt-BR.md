@@ -1,7 +1,6 @@
 # Projeto terrario Parte 1: Introdução a HTML
 
 ![Introdução a HTML](https://github.com/CursoExtensaoUFSC/DesenvolvimenteWebUFSC/blob/main/Arquivos/webdev101-html.png)
-> Esboço por [Tomomi Imura](https://twitter.com/girlie_mac)
 
 ## Quiz Pré-aula
 
