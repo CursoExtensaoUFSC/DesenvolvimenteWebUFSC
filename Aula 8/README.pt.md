@@ -21,8 +21,6 @@ Pense no DOM como uma árvore, representando todas as maneiras como um documento
 
 ![Representação da árvore DOM](images/dom-tree.png)
 
-> Uma representação do DOM e a marcação HTML que faz referência a ele. De [Olfa Nasraoui](https://www.researchgate.net/publication/221417012_Profile-Based_Focused_Crawler_for_Social_Media-Sharing_Websites)
-
 Nesta lição, concluiremos nosso projeto de terrário interativo criando o JavaScript que permitirá ao usuário manipular as plantas na página.
 
 ### Pré-requisitos
