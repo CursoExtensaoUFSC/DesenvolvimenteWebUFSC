@@ -105,7 +105,7 @@ Agora, você pode começar a construir sua página. Normalmente, você usa tags 
 
 Uma tag html que não precisa de uma tag de fechamento é a tag `<img>`, porque ela tem um elemento `src` que contém todas as informações que a página precisa para processar o item.
 
-Crie uma pasta em seu aplicativo chamada `images` e nela, adicione todas as imagens da [pasta de código fonte](imagens); (são 14 imagens de plantas).
+Crie uma pasta em seu aplicativo chamada `images` e nela, adicione todas as imagens da [pasta de código fonte](Imagens); (são 14 imagens de plantas).
 
 ### Tarefa
 
