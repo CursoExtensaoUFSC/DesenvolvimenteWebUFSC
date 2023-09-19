@@ -210,4 +210,4 @@ Estude um pouco sobre as diferentes linguagens de programação à disposição.
 
 ## Lição de casa
 
-[Lendo Documentação](assignment1.pt.md)
+[Lendo Documentação](https://github.com/CursoExtensaoUFSC/DesenvolvimenteWebUFSC/blob/main/Arquivos/Li%C3%A7%C3%B5es%20de%20Casa/assignment1.pt.md)
