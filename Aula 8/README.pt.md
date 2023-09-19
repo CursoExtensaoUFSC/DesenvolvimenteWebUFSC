@@ -203,7 +203,7 @@ Agora você concluiu seu projeto!
 
 🥇 Parabéns! Você terminou seu lindo terrário. 
 
-![terrario terminado](../images/terrarium-final.png)
+![terrario terminado](images/terrarium-final.png)
 
 ---
 
