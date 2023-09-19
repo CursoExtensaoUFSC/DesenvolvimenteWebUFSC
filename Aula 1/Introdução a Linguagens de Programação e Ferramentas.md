@@ -76,7 +76,7 @@ back add r0,r1
 
 Acredite ou não, *ambos estão fazendo a mesma coisa*: imprimir uma sequência de Fibonacci de até 10.
 
-✅ A sequência de Fibonacci [definida](https://en.wikipedia.org/wiki/Fibonacci_number) como um conjunto de números em que cada número é a soma dos dois anteriores, começando em 0 e 1.
+✅ A sequência de Fibonacci [definida](https://pt.wikipedia.org/wiki/Sequ%C3%AAncia_de_Fibonacci) como um conjunto de números em que cada número é a soma dos dois anteriores, começando em 0 e 1.
 
 ## Elementos de um programa
 
