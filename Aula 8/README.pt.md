@@ -1,6 +1,6 @@
 # Projeto Terrarium Parte 3:  Manipulação do DOM e fechamento
 
-![DOM e fechamento](/sketchnotes/webdev101-js.png)
+![DOM e fechamento](https://github.com/CursoExtensaoUFSC/DesenvolvimenteWebUFSC/blob/main/Arquivos/webdev101-js.png)
 > Esboço de [Tomomi Imura](https://twitter.com/girlie_mac)
 
 ## Quiz pré-leitura 
