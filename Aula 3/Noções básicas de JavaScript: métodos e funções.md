@@ -190,4 +190,4 @@ Você pode articular em uma frase a diferença entre funções e métodos? Tente
 Vale a pena [ler um pouco mais sobre arrow functions](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/Arrow_functions), como elas são cada vez mais usados em bases de código. Pratique escrever uma função e, em seguida, reescrevê-la com esta sintaxe.
 ##  Tarefa
 
-[Diversão com funções](assignment.pt.md)
+[Diversão com funções](https://github.com/CursoExtensaoUFSC/DesenvolvimenteWebUFSC/blob/main/Arquivos/Li%C3%A7%C3%B5es%20de%20Casa/assignment3.pt.md)
