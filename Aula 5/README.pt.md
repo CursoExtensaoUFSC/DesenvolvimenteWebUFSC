@@ -1,6 +1,6 @@
 # Noções básicas de JavaScript: Arrays e Laços
 
-![JavaScript Basics - Arrays](/sketchnotes/webdev101-js-arrays.png)
+![JavaScript Basics - Arrays](https://github.com/CursoExtensaoUFSC/DesenvolvimenteWebUFSC/blob/main/Arquivos/webdev101-js-arrays.png)
 > Nota de esboço por [Tomomi Imura](https://twitter.com/girlie_mac)
 
 ## Questionário de Pré-Palestra
