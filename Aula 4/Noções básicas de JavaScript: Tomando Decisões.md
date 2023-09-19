@@ -173,4 +173,4 @@ Vá até a maravilhosa [pesquisa de operador](https://joshwcomeau.com/operator-l
 
 ## Tarefa
 
-[Operadores](assignment.pt.md)
+[Operadores](https://github.com/CursoExtensaoUFSC/DesenvolvimenteWebUFSC/blob/main/Arquivos/Li%C3%A7%C3%B5es%20de%20Casa/assignment4.pt.md)
