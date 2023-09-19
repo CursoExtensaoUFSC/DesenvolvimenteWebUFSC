@@ -19,7 +19,7 @@ Usaremos um closure para manipular o DOM.
 
 Pense no DOM como uma árvore, representando todas as maneiras como um documento de página da web pode ser manipulado. Várias APIs (interfaces de programa de aplicativo) foram escritas para que os programadores, usando sua linguagem de programação de escolha, possam acessar o DOM e editar, alterar, reorganizar e de outra forma gerenciá-lo.
 
-![Representação da árvore DOM](../images/dom-tree.png)
+![Representação da árvore DOM](images/dom-tree.png)
 
 > Uma representação do DOM e a marcação HTML que faz referência a ele. De [Olfa Nasraoui](https://www.researchgate.net/publication/221417012_Profile-Based_Focused_Crawler_for_Social_Media-Sharing_Websites)
 
