@@ -37,8 +37,6 @@ Embora tenhamos evitado propositadamente a introdução de frameworks JavaScript
 - Exercícios
 - Quiz pós-aula
 
-> **Nota sobre os quizzes**: todos os quizzes se encontram [aqui](https://ashy-river-0debb7803.1.azurestaticapps.net/quiz/1?loc=pt-BR), um total de 48 quizzes, com 3 questões em cada.
-Também podem ser acessados localmente pela pasta `quiz-app`.
 
 ## Lições
 
