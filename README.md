@@ -37,6 +37,10 @@ Embora tenhamos evitado propositadamente a introdução de frameworks JavaScript
 - Exercícios
 - Quiz pós-aula
 
+## Informações sobre os Quizzes
+- Ao clicar no link, o quiz estará em inglês. Existe um botão no canto superior esquerdo com o qual você poderá mudar para português.
+- Caso você escolha a alternativa errada, irá mostrar uma mensagem de erro e só poderá passar para a próxima pergunta quando escolher a alternativa correta.
+
 
 ## Lições
 
