@@ -16,7 +16,7 @@ Nesta lição, usaremos HTML para fazer o layout do 'esqueleto' da interface do 
 
 Em seu computador, crie uma pasta chamada 'terrario' e, dentro dela, um arquivo chamado 'index.html'. Você pode fazer isso no Visual Studio Code depois de criar sua pasta terrarium, abrindo uma nova janela do VS Code, clicando em 'abrir pasta' e navegando até sua nova pasta. Clique no pequeno botão 'arquivo' no painel do Explorer e crie o novo arquivo:
 
-![explorer no VS Code](../vs-code-index.png)
+![explorer no VS Code](vs-code-index.png)
 
 Ou
 
