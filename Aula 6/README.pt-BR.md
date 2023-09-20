@@ -227,4 +227,4 @@ Saiba mais sobre como construir sites para a web e dispositivos móveis em [Micr
 
 ## Atribuiçao
 
-[Pratique seu HTML: Construa uma maquete de blog](assignment6.pt-BR.md)
+[Pratique seu HTML: Construa uma maquete de blog](https://github.com/CursoExtensaoUFSC/DesenvolvimenteWebUFSC/blob/main/Aula%206/assignment6.pt.md)
