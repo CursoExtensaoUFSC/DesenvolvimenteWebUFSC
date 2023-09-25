@@ -10,7 +10,7 @@
 
 CSS, ou Cascading Style Sheets, resolve um problema importante no desenvolvimento web: como fazer com que seu site pareça bom. Projetar suas aplicações as torna mais úteis e atraentes; você também pode usar CSS para criar um design web responsivo (RWD), o que permite que suas aplicações pareçam boas, independentemente do tamanho da tela em que são exibidas. CSS não se trata apenas de fazer com que sua aplicação pareça boa; sua especificação inclui animações e transformações que podem permitir interações sofisticadas para suas aplicações. O grupo de trabalho CSS ajuda a manter as especificações CSS atualizadas; você pode acompanhar seu trabalho no [site do World Wide Web Consortium](https://www.w3.org/Style/CSS/members).
 
-> Tenha em mente que o CSS é uma linguagem que evolui, assim como tudo na web, e nem todos os navegadores suportam as partes mais recentes da especificação. Sempre verifique suas implementações consultando [CanIUse.com](caniuse.com).
+> Tenha em mente que o CSS é uma linguagem que evolui, assim como tudo na web, e nem todos os navegadores suportam as partes mais recentes da especificação. Sempre verifique suas implementações consultando [CanIUse.com](www.caniuse.com).
 
 Nesta lição, adicionaremos estilos ao nosso terrário online e aprenderemos mais sobre vários conceitos de CSS: a cascata, a herança e o uso de seletores, posicionamento e o uso de CSS para criar layouts. No processo, projetaremos o terrário e criaremos o próprio terrarium.
 
