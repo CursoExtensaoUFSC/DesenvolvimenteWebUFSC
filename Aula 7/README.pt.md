@@ -1,11 +1,12 @@
-# Terrarium Project Parte 2: I a CSS
+# Projeto Terrarium Parte 2: I a CSS
 
-![Introducción a CSS](/sketchnotes/webdev101-css.png)
-> Sketchnote por [Tomomi Imura](https://twitter.com/girlie_mac)
+![Introdução a CSS](/sketchnotes/webdev101-css.png)
 
-## [Pre-lecture prueba](https://ashy-river-0debb7803.1.azurestaticapps.net/quiz/17)
+## Quiz pré-leitura 
 
-### Introducción:
+[Quiz pré-leitura](https://ashy-river-0debb7803.1.azurestaticapps.net/quiz/17)
+
+### Introdução:
 
 CSS, ou Cascading Style Sheets, resolve um problema importante no desenvolvimento web: como fazer com que seu site pareça bom. Projetar suas aplicações as torna mais úteis e atraentes; você também pode usar CSS para criar um design web responsivo (RWD), o que permite que suas aplicações pareçam boas, independentemente do tamanho da tela em que são exibidas. CSS não se trata apenas de fazer com que sua aplicação pareça boa; sua especificação inclui animações e transformações que podem permitir interações sofisticadas para suas aplicações. O grupo de trabalho CSS ajuda a manter as especificações CSS atualizadas; você pode acompanhar seu trabalho no [site do World Wide Web Consortium](https://www.w3.org/Style/CSS/members).
 
