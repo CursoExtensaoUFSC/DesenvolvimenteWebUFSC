@@ -49,6 +49,7 @@ h1 {
 ```
 
 ✅ Qual cor é exibida em sua aplicação web? Por quê? Você pode encontrar uma maneira de anular estilos? Quando você gostaria de fazer isso ou por que não?
+
 ---
 
 ## 2. Herança
