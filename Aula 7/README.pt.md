@@ -1,6 +1,6 @@
 # Projeto Terrarium Parte 2: I a CSS
 
-![Introdução a CSS](/sketchnotes/webdev101-css.png)
+![Introdução a CSS](https://github.com/CursoExtensaoUFSC/DesenvolvimenteWebUFSC/blob/main/Arquivos/webdev101-css.png)
 
 ## Quiz pré-leitura 
 
