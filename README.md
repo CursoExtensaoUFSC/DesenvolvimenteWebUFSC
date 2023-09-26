@@ -1,4 +1,4 @@
-[comment] <# Desenvolvimento Web para Iniciantes - Programa de Estudos>
+# Desenvolvimento Web para Iniciantes - Programa de Estudos
 
 Este mini curso foi projetado por Jen Looper, Chris Noring, Christopher Harrison, Jasmine Greenaway, Yohan Lasorsa, Floor Drees, e Tomomi Imura!
 
