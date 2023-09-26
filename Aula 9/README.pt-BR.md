@@ -2,7 +2,7 @@
 
 Neste projeto, você aprenderá a construir um banco fictício. Essas lições incluem instruções sobre como fazer o layout de um aplicativo Web, fornecer rotas, criar formulários, gerenciar o estado e buscar dados de uma API da qual você buscará os dados do banco.
 
-| ![Screen1](../images/screen1.png) | ![Screen2](../images/screen2.png) |
+| ![Screen1](./images/screen1.png) | ![Screen2](./images/screen2.png) |
 |--------------------------------|--------------------------------|
 
 ## Lições
