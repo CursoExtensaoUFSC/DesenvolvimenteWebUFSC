@@ -8,9 +8,9 @@ Neste projeto, você aprenderá a construir um banco fictício. Essas lições i
 ## Lições
 
 1. [Templates HTML e Routes da aplicação Web](1-template-route/README.md)
-2. [Crie um formulário de login e registro](2-forms/README.md)
-3. [Métodos de busca e uso de dados](3-data/README.md)
-4. [Conceitos de Gestão do Estado](4-state-management/README.md)
+2. [Crie um formulário de login e registro](2-formularios/README.md)
+3. [Métodos de busca e uso de dados](3-dados/README.md)
+4. [Conceitos de Gestão do Estado](4-manejamento-de-estado/README.md)
 
 ### Créditos
 
