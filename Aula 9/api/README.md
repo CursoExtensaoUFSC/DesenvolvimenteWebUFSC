@@ -1,19 +1,21 @@
-# Bank API
+# API de banco
 
-> Bank API built with [Node.js](https://nodejs.org) + [Express](https://expressjs.com/).
+> API de banco construida com [Node.js](https://nodejs.org) + [Express](https://expressjs.com/).
 
-The API is already built for you and not part of the exercise.
+A API já foi construida para você e não fará parte do exercício.
 
-However, if you're interested to learn how to build an API like this you can follow this series of videos: https://aka.ms/NodeBeginner (videos 17 through 21 covers this exact API).
+Entrentanto, se você se interessar por aprender como construir uma API como essa você pode seguir essa série de videos: https://aka.ms/NodeBeginner (os videos 17 ao 21 cobrem exatamente essa API).
 
-You can also take a look at this interactive tutorial: https://aka.ms/learn/express-api
+Você também pode dar uma olhada nesse tutorial interativo: https://aka.ms/learn/express-api
 
-## Running the server
+## Rodando o servidor
 
 Make sure you have [Node.js](https://nodejs.org) installed.
+Tenha certeza que você tem [Node.js](https://nodejs.org) instalado em sua última versão.
 
-1. Git clone this repo [The Web-Dev-For-Beginners](https://github.com/microsoft/Web-Dev-For-Beginners).
+1. Clone esse repositório [The Web-Dev-For-Beginners](https://github.com/microsoft/Web-Dev-For-Beginners).
 2. Open your terminal and navigate into the `Web-Dev-For-Beginners/7-bank-project/api` folder
+3. Abra seu terminal e navegue até 
 2. Run `npm install` and wait for the packages to be installed(could take a while depending on the quality of your internet connection).
 3. When the installation is over, run `npm start` and you are good to go.
 
