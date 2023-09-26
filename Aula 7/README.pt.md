@@ -251,8 +251,8 @@ Observe o uso de porcentagens aqui. Se você reduzir o zoom do seu navegador, ta
 
 O CSS parece enganosamente simples, mas existem muitos desafios ao projetar uma aplicação perfeitamente compatível com todos os navegadores e tamanhos de tela. CSS Grid e Flexbox são ferramentas que foram desenvolvidas para tornar o trabalho um pouco mais estruturado e confiável. Aprenda sobre essas ferramentas jogando [Flexbox Froggy](https://flexboxfroggy.com/) e [Grid Garden](https://codepip.com/games/grid-garden/).
 
-## Tarefa
 ---
+## Tarefa
 
 [Refatoração CSS](assignment7.pt.md)
 
