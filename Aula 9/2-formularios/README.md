@@ -17,7 +17,7 @@ You need to have completed the [HTML templates and routing](../1-template-route/
 **Take note**
 You will have two terminals running at the same time as listed below.
 1. For the the main bank app we built in the [HTML templates and routing](../1-template-route/README.md) lesson
-2. For the [Bank APP server API](../api/README.md) we just setup above.
+2. For the [Bank APP server API](../API/README.md) we just setup above.
 
 You need two of the servers up and running to follow through with the rest of the lesson. They are listening on different ports(port `3000` and port `5000`) so everything should work just fine.
 
