@@ -12,7 +12,7 @@ In this part we'll use HTML forms to add login and registration to our web app. 
 
 ### Prerequisite
 
-You need to have completed the [HTML templates and routing](../1-template-route/README.md) of the web app for this lesson. You also need to install [Node.js](https://nodejs.org) and [run the server API](./api/README.md) locally so you can send data to create accounts.
+You need to have completed the [HTML templates and routing](../1-template-route/README.md) of the web app for this lesson. You also need to install [Node.js](https://nodejs.org) and [run the server API](./API/README.md) locally so you can send data to create accounts.
 
 **Take note**
 You will have two terminals running at the same time as listed below.
