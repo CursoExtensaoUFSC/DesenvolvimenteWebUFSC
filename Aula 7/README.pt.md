@@ -68,7 +68,7 @@ body {
 
 Abra o console do seu navegador na guia 'Elementos' e observe a fonte do H1. Ele herda a fonte do corpo, como indicado no navegador.
 
-![Fonte Heradada](../images/1.png)
+![Fonte Heradada](https://github.com/CursoExtensaoUFSC/DesenvolvimenteWebUFSC/blob/main/Aula%207/images/1.png)
 
 ✅ Você pode fazer com que um estilo aninhado herde uma propriedade diferente?
 
