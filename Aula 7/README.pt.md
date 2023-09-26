@@ -243,7 +243,7 @@ Observe o uso de porcentagens aqui. Se você reduzir o zoom do seu navegador, ta
 
 🚀 Desafio: adicione um brilho de 'bolha' à área inferior esquerda do frasco para que pareça mais semelhante ao vidro. Você estará projetando o `.jar-glossy-long` e o `.jar-glossy-short` para que pareçam um reflexo brilhante. É assim que ficaria:
 
-![terrarium pronto](../images/terrarium-final.png)
+![terrarium pronto](https://github.com/CursoExtensaoUFSC/DesenvolvimenteWebUFSC/blob/main/Aula%207/images/terrarium-final.png)
 
 ## [Quiz pós-leitura](https://ashy-river-0debb7803.1.azurestaticapps.net/quiz/18)
 
