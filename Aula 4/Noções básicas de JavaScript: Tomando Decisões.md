@@ -87,8 +87,8 @@ As decisões podem exigir mais de uma comparação e podem ser combinadas com op
 | Simbolo | Descrição                                                                                                              | Exemplo                                                                              |
 | ------- | ---------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
 | `&&`    | **AND Lógico**: Compara duas expressões booleanas. Retorna verdadeiro ** apenas ** se ambos os lados forem verdadeiros | `(5 > 6) && (5 < 6 ) //// Um lado é falso, o outro é verdadeiro. Retorna falso`      |
-| `\|\|`  | **OR Lógico**: Compara duas expressões booleanas. Retorna verdadeiro se pelo menos um lado for verdadeiro              | `(5> 6) \ | \ | (5 <6) // Um lado é falso, o outro é verdadeiro. Retorna verdadeiro` |
-| `!`     | **NOT Lógico**: Retorna o valor oposto de uma expressão booleana                                                       | `! (5> 6) // 5 não é maior que 6, mas"! " retornará verdadeiro`                      |
+| `\|\|`  | **OR Lógico**: Compara duas expressões booleanas. Retorna verdadeiro se pelo menos um lado for verdadeiro              | `(5 > 6) \|\| (5 <6) // Um lado é falso, o outro é verdadeiro. Retorna verdadeiro`   |
+| `!`     | **NOT Lógico**: Retorna o valor oposto de uma expressão booleana                                                       | `! (5 > 6) // 5 não é maior que 6, mas "! " retornará verdadeiro`                    |
 
 ## Codições e Decisões com Operadores Lógicos
 
