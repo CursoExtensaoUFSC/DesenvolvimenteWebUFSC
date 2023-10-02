@@ -12,7 +12,7 @@ In this final part, we'll look over the app we built to rethink how the state is
 
 ### Prerequisite
 
-You need to have completed the [data fetching](../3-data/README.md) part of the web app for this lesson. You also need to install [Node.js](https://nodejs.org) and [run the server API](../api/README.md) locally so you can manage account data.
+You need to have completed the [data fetching](../3-dados/README.md) part of the web app for this lesson. You also need to install [Node.js](https://nodejs.org) and [run the server API](../api/README.md) locally so you can manage account data.
 
 You can test that the server is running properly by executing this command in a terminal:
 
