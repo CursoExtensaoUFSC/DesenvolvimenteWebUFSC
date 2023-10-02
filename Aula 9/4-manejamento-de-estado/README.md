@@ -2,7 +2,7 @@
 
 ## Pre-Lecture Quiz
 
-[Pre-lecture quiz](https://ashy-river-0debb7803.1.azurestaticapps.net/quiz/47)
+[Quiz pré-lição](https://ashy-river-0debb7803.1.azurestaticapps.net/quiz/47)
 
 ### Introduction
 
@@ -270,7 +270,7 @@ Try working together to change what is saved and loaded from `localStorage` to o
 
 ## Post-Lecture Quiz
 
-[Post-lecture quiz](https://ashy-river-0debb7803.1.azurestaticapps.net/quiz/48)
+[Quiz pós-lição](https://ashy-river-0debb7803.1.azurestaticapps.net/quiz/48)
 
 ## Assignment
 
