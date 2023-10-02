@@ -2,8 +2,8 @@
 
 ![JavaScript Basics - Arrays](https://github.com/CursoExtensaoUFSC/DesenvolvimenteWebUFSC/blob/main/Arquivos/webdev101-js-arrays.png)
 
-## Questionário de Pré-Palestra
-[Questionário de Pré-Palestra](https://ashy-river-0debb7803.1.azurestaticapps.net/quiz/13)
+## Quiz Pré-Aula
+[Quiz Pré-Aula](https://ashy-river-0debb7803.1.azurestaticapps.net/quiz/13)
 
 Esta lição cobre os conceitos básicos do JavaScript, a linguagem que proporciona interactividade na web. Nesta lição, aprenderá sobre arrays e loops, que são usados para manipular dados.
 
