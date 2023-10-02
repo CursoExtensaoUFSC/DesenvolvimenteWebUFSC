@@ -119,14 +119,14 @@ for (let i = 0; i < iceCreamFlavors.length; i++) {
 
 Existem outras formas de looping sobre arrays que não são para e enquanto se faz loops. Existem [forEach](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach), [for-of](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/for...of), and [map](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/map). Reescreva o seu laço de matriz usando uma destas técnicas.
 
-## Questionário de pós-publicidade
-[Questionário de pós-publicidade](https://ashy-river-0debb7803.1.azurestaticapps.net/quiz/14)
+## Quiz Pós-Aula
+[Quiz Pós-Aula](https://ashy-river-0debb7803.1.azurestaticapps.net/quiz/14)
 
 
 ## Revisão e Auto-estudo
 
 As arrays em JavaScript têm muitos métodos ligados a elas, extremamente úteis para a manipulação de dados. [Leia mais sobre estes métodos](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) e experimente algumas delas (como empurrar, estalar, cortar e emendar) numa variedade da sua criação.
 
-## Atribuição
+## Tarefa
 
 [Laçar um Array](assignment5.pt.md)
