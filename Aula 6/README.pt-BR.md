@@ -2,9 +2,9 @@
 
 ![Introdução a HTML](https://github.com/CursoExtensaoUFSC/DesenvolvimenteWebUFSC/blob/main/Arquivos/webdev101-html.png)
 
-## Quiz Pré-aula
+## Quiz Pré-Aula
 
-[Quiz pré-aula](https://ashy-river-0debb7803.1.azurestaticapps.net/quiz/15)
+[Quiz Pré-Aula](https://ashy-river-0debb7803.1.azurestaticapps.net/quiz/15)
 
 ### Introdução
 
