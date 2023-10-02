@@ -134,7 +134,7 @@ Abaixo está um exemplo mais tangível:
 ```javascript
 let primeiroNumero = 20;
 let segundoNumero = 10
-let maiorNumero = primeiroNumero > segundoNumero ? primeiroNumero: segundoNumero;
+let maiorNumero = primeiroNumero > segundoNumero ? primeiroNumero : segundoNumero;
 ```
 
 ✅ Reserve um minuto para ler este código algumas vezes. Você entende como esses operadores estão trabalhando?
