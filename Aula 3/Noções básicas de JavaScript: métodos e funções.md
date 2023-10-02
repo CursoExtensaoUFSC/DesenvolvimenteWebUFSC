@@ -113,7 +113,7 @@ Se uma função retornar algo, então a palavra-chave `return` é usada. A palav
 return myVariable;
 ```  
 
-Poderíamos criar uma função para criar uma mensagem de saudação e retornar o mensagem para a pessoa usuária.
+Poderíamos criar uma função para criar uma mensagem de saudação e retornar a mensagem para a pessoa usuária.
 
 ```javascript
 function createGreetingMessage(name) {
