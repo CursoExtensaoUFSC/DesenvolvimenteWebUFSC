@@ -12,7 +12,7 @@ In this lesson, we'll see how to fetch data from a server asynchronously, and us
 
 ### Prerequisite
 
-You need to have built the [Login and Registration Form](../2-forms/README.md) part of the web app for this lesson. You also need to install [Node.js](https://nodejs.org) and [run the server API](../api/README.md) locally so you get account data.
+You need to have built the [Login and Registration Form](../2-formularios/README.md) part of the web app for this lesson. You also need to install [Node.js](https://nodejs.org) and [run the server API](../api/README.md) locally so you get account data.
 
 You can test that the server is running properly by executing this command in a terminal:
 
