@@ -182,7 +182,7 @@ Os booleanos podem ter apenas dois valores: `true` ou` false`. Os booleanos pode
 
 ## 🚀 Desafio
 
-JavaScript é notório por suas maneiras surpreendentes de lidar com tipos de dados ocasionalmente. Pesquise sobre essas 'pegadinhas'. Por exemplo: a diferenciação de maiúsculas e minúsculas pode afetar! Tente isto em seu console: `let age = 1; deixe Idade = 2; age == Age` (resolve `false` - por quê?). Que outras dicas você pode encontrar?
+JavaScript é notório por suas maneiras surpreendentes de lidar com tipos de dados ocasionalmente. Pesquise sobre essas 'pegadinhas'. Por exemplo: a diferenciação de maiúsculas e minúsculas pode afetar! Tente isto em seu console: `let idade = 1; let Idade = 2; idade == Idade` (resolve `false` - por quê?). Que outras dicas você pode encontrar?
 
 ## Quiz Pós-Aula
 [Quiz Pós-Aula](https://ashy-river-0debb7803.1.azurestaticapps.net/quiz/8)
