@@ -2,7 +2,7 @@
 
 ## Pre-Lecture Quiz
 
-[Pre-lecture quiz](https://ashy-river-0debb7803.1.azurestaticapps.net/quiz/45)
+[Quiz pré-lição](https://ashy-river-0debb7803.1.azurestaticapps.net/quiz/45)
 
 ### Introduction
 
