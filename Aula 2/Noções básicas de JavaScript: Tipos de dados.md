@@ -194,3 +194,8 @@ Dê uma olhada [nessa lista de exercícios de JavaScript](https://css-tricks.com
 ## Tarefa
 
 [Prática de Tipos de Dados](https://github.com/CursoExtensaoUFSC/DesenvolvimenteWebUFSC/blob/main/Arquivos/Li%C3%A7%C3%B5es%20de%20Casa/assignment2.pt.md)
+
+
+## Lista de Exercícios:
+
+[Aula 2 - Tipos de Dados](https://github.com/CursoExtensaoUFSC/DesenvolvimenteWebUFSC/blob/main/Lista%20de%20Exerc%C3%ADcios/README.md#aula-2---tipos-de-dados)
