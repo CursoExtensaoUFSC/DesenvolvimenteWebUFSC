@@ -82,7 +82,7 @@ for (let i = 0; i < 10; i++) {
 }
 ```
 
-✅Executar este código numa consola de navegação. O que acontece quando se fazem pequenas alterações ao contador, condição, ou expressão de iteração? Pode fazê-lo correr para trás, criando uma contagem decrescente?
+✅Executar este código num console de navegação. O que acontece quando se fazem pequenas alterações ao contador, condição, ou expressão de iteração? Pode fazê-lo correr para trás, criando uma contagem decrescente?
 
 ### While loop
 
