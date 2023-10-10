@@ -28,7 +28,7 @@ Abaixo estão listas de exercícios referentes a cada aula deste curso. Clique n
 - [Exercícios While Loops](https://www.w3schools.com/js/exercise_js.asp?filename=exercise_js_loop_while1)
 - EXTRA: [Exercícios Loops com Break](https://www.w3schools.com/js/exercise_js.asp?filename=exercise_js_break1)
 
-
+---
 
 Fique a vontade para se aprofundar na matéria fazendo outros exercícios! Conhecimento nunca é demais!
 
