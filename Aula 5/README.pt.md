@@ -64,15 +64,15 @@ iceCreamFlavors.length; //5
 
 ✅ Experimente você mesmo! Use a consola do seu navegador para criar e manipular uma série da sua própria criação.
 
-## Laços
+## Loops
 
-Os laços permitem tarefas repetitivas ou **iterativas**, e podem poupar muito tempo e código. Cada iteração pode variar nas suas variáveis, valores, e condições. Existem diferentes tipos de loops em JavaScript, e têm pequenas diferenças, mas essencialmente fazem a mesma coisa: loop over data.
+Os loops permitem tarefas repetitivas ou **iterativas**, e podem poupar muito tempo e código. Cada iteração pode variar nas suas variáveis, valores, e condições. Existem diferentes tipos de loops em JavaScript, e têm pequenas diferenças, mas essencialmente fazem a mesma coisa: loop over data.
 
-### Para Laço
+### For loop
 
-O laço `para` requer 3 partes para iterar:
+O loop `for` requer 3 partes para iterar:
     - `Contador` Uma variável que é tipicamente inicializada com um número que conta o número de iterações.
-    - `condição` Expressão que utiliza operadores de comparação para fazer parar o laço quando `verdadeiro`
+    - `condição` Expressão que utiliza operadores de comparação para fazer parar o loop quando `verdadeiro`
     - `expressão de iteração` Funciona no final de cada iteração, normalmente utilizada para alterar o valor do contador
   
 ```javascript
@@ -86,7 +86,7 @@ for (let i = 0; i < 10; i++) {
 
 ### While loop
 
-Ao contrário da sintaxe para o laço `para`, `entretanto` só requer uma condição que irá parar o laço quando `verdadeiro`. As condições em loops geralmente dependem de outros valores como contadores, e devem ser geridas durante o loop. Os valores iniciais dos contadores devem ser criados fora do laço, e quaisquer expressões para satisfazer uma condição, incluindo a mudança do contador, devem ser mantidas dentro do laço.
+Ao contrário da sintaxe para o loop `for`, `while` só requer uma condição que irá parar o laço quando `verdadeiro`. As condições em loops geralmente dependem de outros valores como contadores, e devem ser geridas durante o loop. Os valores iniciais dos contadores devem ser criados fora do loop, e quaisquer expressões para satisfazer uma condição, incluindo a mudança do contador, devem ser mantidas dentro do loop.
 
 ```javascript
 //Contagem até 10
@@ -99,7 +99,7 @@ while (i < 10) {
 
 ✅ Porque escolheria um para loop vs. um loop de tempo? Os 17K espectadores tinham a mesma pergunta sobre o StackOverflow, e algumas das opiniões [pode ser interessante para você](https://stackoverflow.com/questions/39969145/while-loops-vs-for-loops-in-javascript).
 
-## Laços e Arrays
+## Loop e Arrays
 
 As arrays são frequentemente utilizadas com loops porque a maioria das condições requer o comprimento do array para parar o loop, e o índice também pode ser o valor do contador.
 
@@ -133,4 +133,4 @@ As arrays em JavaScript têm muitos métodos ligados a elas, extremamente úteis
 
 ## Lista de Exercícios:
 
-[Aula 5 - Arrays e Laços](https://github.com/CursoExtensaoUFSC/DesenvolvimenteWebUFSC/blob/main/Lista%20de%20Exerc%C3%ADcios/README.md#aula-5---arrays-e-la%C3%A7os)
+[Aula 5 - Arrays e Loops](https://github.com/CursoExtensaoUFSC/DesenvolvimenteWebUFSC/blob/main/Lista%20de%20Exerc%C3%ADcios/README.md#aula-5---arrays-e-loops)
