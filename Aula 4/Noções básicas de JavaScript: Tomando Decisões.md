@@ -174,3 +174,8 @@ Vá até a maravilhosa [pesquisa de operador](https://joshwcomeau.com/operator-l
 ## Tarefa
 
 [Operadores](https://github.com/CursoExtensaoUFSC/DesenvolvimenteWebUFSC/blob/main/Arquivos/Li%C3%A7%C3%B5es%20de%20Casa/assignment4.pt.md)
+
+
+## Lista de Exercícios:
+
+[Aula 4 - Tomando Decicões](https://github.com/CursoExtensaoUFSC/DesenvolvimenteWebUFSC/blob/main/Lista%20de%20Exerc%C3%ADcios/README.md#aula-4---tomando-decis%C3%B5es)
