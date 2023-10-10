@@ -2,7 +2,9 @@
 
 ## Instruções
 
-Existem muitas ferramentas que uma pessoa desenvolvedora de web pode precisar que estão na [documentação MDN para ferramentas do lado do cliente (versão em inglês)](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/Overview). Selecione 3 ferramentas não abordadas na lição, explique por que uma dev Web as usaria, procure uma ferramenta que se enquadre nesta categoria e compartilhe sua documentação. Não use o mesmo exemplo de ferramenta em documentos MDN.
+Abaixo estão listas de exercícios referentes a cada aula deste curso. Clique no link para ser redirecionado ao site externo dos exercícios.
+
+Qualquer dúvida, estamos a disposição!
 
 ## Rubrica
 
