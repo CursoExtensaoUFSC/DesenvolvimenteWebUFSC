@@ -8,9 +8,9 @@ Abaixo estão listas de exercícios referentes a cada aula deste curso. Clique n
 ## Aula 2 - Tipos de Dados
 
 - [Exercícios Variáveis](https://www.w3schools.com/js/exercise_js.asp?filename=exercise_js_variables1)
-- [Exercícios Operadores](https://www.w3schools.com/js/exercise_js.asp?filename=exercise_js_operators1)
 - [Exercícios Tipos de Dados](https://www.w3schools.com/js/exercise_js.asp?filename=exercise_js_datatypes1)
 - [Exercícios Strings](https://www.w3schools.com/js/exercise_js.asp?filename=exercise_js_strings1)
+- [Exercícios Operadores](https://www.w3schools.com/js/exercise_js.asp?filename=exercise_js_operators1)
 
 ## Aula 3 - Métodos e Funções
 
