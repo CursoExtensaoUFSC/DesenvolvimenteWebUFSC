@@ -130,3 +130,7 @@ As arrays em JavaScript têm muitos métodos ligados a elas, extremamente úteis
 ## Tarefa
 
 [Laçar um Array](assignment5.pt.md)
+
+## Lista de Exercícios:
+
+[Aula 5 - Arrays e Laços](https://github.com/CursoExtensaoUFSC/DesenvolvimenteWebUFSC/blob/main/Lista%20de%20Exerc%C3%ADcios/README.md#aula-5---arrays-e-la%C3%A7os)
