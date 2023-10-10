@@ -40,7 +40,7 @@ Embora tenhamos evitado propositadamente a introdução de frameworks JavaScript
 - Ao clicar no link, o quiz estará em inglês. Existe um botão no canto superior esquerdo com o qual você poderá mudar para português.
 - Caso você escolha a alternativa errada, irá mostrar uma mensagem de erro e só poderá passar para a próxima pergunta quando escolher a alternativa correta.
 
-## Informações sobre os Quizzes
+## Listas de Exercícios
 - Cada lição possui uma lista de exercício para exercitar seu conhecimento.
 - Você pode ver as listas clicando [aqui](https://github.com/CursoExtensaoUFSC/DesenvolvimenteWebUFSC/blob/main/Lista%20de%20Exerc%C3%ADcios/README.md).
 
