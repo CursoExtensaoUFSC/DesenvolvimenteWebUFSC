@@ -15,13 +15,11 @@ Abaixo estão listas de exercícios referentes a cada aula deste curso. Clique n
 ## Aula 3 - Métodos e Funções
 
 - [Exercícios Funções](https://www.w3schools.com/js/exercise_js.asp?filename=exercise_js_functions1)
-- [Exercícios Condições](https://www.w3schools.com/js/exercise_js.asp?filename=exercise_js_conditions1)
 
 ## Aula 4 - Tomando Decisões
 
 - [Exercícios Comparações](https://www.w3schools.com/js/exercise_js.asp?filename=exercise_js_comparisons1)
-- [Exercícios Operadores](https://www.w3schools.com/js/exercise_js.asp?filename=exercise_js_operators1)
-- [Exercícios Tipos de Dados](https://www.w3schools.com/js/exercise_js.asp?filename=exercise_js_datatypes1)
+- [Exercícios Condições](https://www.w3schools.com/js/exercise_js.asp?filename=exercise_js_conditions1)
 
 ## Aula 5 - Arrays e Laços
 
