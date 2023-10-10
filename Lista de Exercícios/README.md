@@ -21,7 +21,7 @@ Abaixo estão listas de exercícios referentes a cada aula deste curso. Clique n
 - [Exercícios Comparações](https://www.w3schools.com/js/exercise_js.asp?filename=exercise_js_comparisons1)
 - [Exercícios Condições](https://www.w3schools.com/js/exercise_js.asp?filename=exercise_js_conditions1)
 
-## Aula 5 - Arrays e Laços
+## Aula 5 - Arrays e Loops
 
 - [Exercícios Arrays](https://www.w3schools.com/js/exercise_js.asp?filename=exercise_js_arrays1)
 - [Exercícios For Loops](https://www.w3schools.com/js/exercise_js.asp?filename=exercise_js_loops1)
