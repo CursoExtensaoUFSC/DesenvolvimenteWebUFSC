@@ -191,3 +191,8 @@ Vale a pena [ler um pouco mais sobre arrow functions](https://developer.mozilla.
 ##  Tarefa
 
 [Diversão com funções](https://github.com/CursoExtensaoUFSC/DesenvolvimenteWebUFSC/blob/main/Arquivos/Li%C3%A7%C3%B5es%20de%20Casa/assignment3.pt.md)
+
+
+## Lista de Exercícios:
+
+[Aula 3 - Métodos e Funções](https://github.com/CursoExtensaoUFSC/DesenvolvimenteWebUFSC/blob/main/Lista%20de%20Exerc%C3%ADcios/README.md#aula-3---m%C3%A9todos-e-fun%C3%A7%C3%B5es)
