@@ -95,7 +95,7 @@ Esta forma de projetar uma etiqueta oferece controle sobre elementos individuais
 
 ### ID
 
-"Adicione algum estilo para projetar os contêineres esquerdo e direito. Dado que há apenas um contêiner esquerdo e apenas um contêiner direito, eles são identificados no markup. Para projetá-los, use `#`:
+Adicione algum estilo para projetar os contêineres esquerdo e direito. Dado que há apenas um contêiner esquerdo e apenas um contêiner direito, eles são identificados no markup. Para projetá-los, use `#`:
 
 ```
 #left-container {
