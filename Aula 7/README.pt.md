@@ -20,7 +20,7 @@ Você deve ter o HTML para o seu terrário construído e pronto para ser estiliz
 
 ### Tarefa:
 
-Na sua paste terrarium, crie um arquivo chamado `style.css`. Importe este arquiv na seção `<head>`:
+Na sua paste terrarium, crie um arquivo chamado `style.css`. Importe este arquivo na seção `<head>`:
 
 ```
 <link rel="stylesheet" href="./style.css" />
