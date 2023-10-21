@@ -1,27 +1,28 @@
-# Build a Banking App Part 2: Build a Login and Registration Form
+# Construindouma Banking App Parte 2: Construindo um Login e um formulário de Registro
 
-## Pre-Lecture Quiz
+## Quiz pré-lição
 
 [Quiz pré-lição](https://ashy-river-0debb7803.1.azurestaticapps.net/quiz/43)
 
-### Introduction
+### Introdução
 
-In almost all modern web apps, you can create an account to have your own private space. As multiple users can access a web app at the same time, you need a mechanism to store each user personal data separately and select which information to display information. We won't cover how to manage [user identity securely](https://en.wikipedia.org/wiki/Authentication) as it's an extensive topic on its own, but we'll make sure each user is able to create one (or more) bank account on our app.
+Em quase todos os aplicativos da web modernos, você pode criar uma conta para ter seu próprio espaço privado. Como vários usuários podem acessar um aplicativo da web ao mesmo tempo, você precisa de um mecanismo para armazenar os dados pessoais de cada usuário separadamente e selecionar quais informações exibir. Nós não vamos abordar como manejar [identidade de usuário com segurança](https://en.wikipedia.org/wiki/Authentication) pois é um tópico extenso por si póprio, mas vamos garantir que cada usuário será capaz de criar uma conta(ou mais) contas bancárias em nosso app.
 
-In this part we'll use HTML forms to add login and registration to our web app. We'll see how to send the data to a server API programmatically, and ultimately how to define basic validation rules for user inputs.
+Nesta parte usaremos formulários HTML para adicionar login e registro ao nosso aplicativo web. Veremos como enviar os dados para uma API de servidor de forma programática e, por fim, como definir regras básicas de validação para entradas do usuário.
 
-### Prerequisite
+### Pré-requisitos
 
-You need to have completed the [HTML templates and routing](../1-template-route/README.md) of the web app for this lesson. You also need to install [Node.js](https://nodejs.org) and [run the server API](../api/README.md) locally so you can send data to create accounts.
+Você precisa ter completado [HTML templates e rotas](../1-template-route/README.md) de nosso web app para essa lição. Precisa ter instalado o [Node.js](https://nodejs.org) e [rodar o servidor API](../api/README.md) localmente para podermos evniar os dados para criar as contas.
 
-**Take note**
-You will have two terminals running at the same time as listed below.
-1. For the the main bank app we built in the [HTML templates and routing](../1-template-route/README.md) lesson
-2. For the [Bank APP server API](../api/README.md) we just setup above.
+**Tomando nota**
+Você deve ter dois terminais rodando ao mesmo tempo como listado abaixo.
+1. Para o código principal do nosso bank app que construimos na lição de [HTML templates e rotas](../1-template-route/README.md).
+2. Para o [servidor da API](../api/README.md) que configuramos logo acima.
 
-You need two of the servers up and running to follow through with the rest of the lesson. They are listening on different ports(port `3000` and port `5000`) so everything should work just fine.
+Você precisa de dois servidores em funcionamento para prosseguir com o restante da lição. Eles estão escutando em portas diferentes (porta `3000` e porta `5000`), então tudo deve funcionar bem.
 
 You can test that the server is running properly by executing this command in a terminal:
+Você pode verificar se o servidor está rodando de forma correnta executando o comando abaixo no terminal:
 
 ```sh
 curl http://localhost:5000/api
@@ -30,31 +31,31 @@ curl http://localhost:5000/api
 
 ---
 
-## Form and controls
+## Formulários e Controles
 
-The `<form>` element encapsulates a section of an HTML document where the user can input and submit data with interactive controls. There are all sorts of user interface (UI) controls that can be used within a form, the most common one being the `<input>` and the `<button>` elements.
+O elemento `<form>` encapsula uma seção de um documento HTML onde o usuário pode colocar uma entrada e enviar um dado atráves de controles interativos. Existem uma variedade em tipos de controles de interface de usuário (UI) que podem ser usados dentro de um formulário, sendo os mais comuns os elementos `<input>` e `<button>`.
 
-There are a lot of different [types](https://developer.mozilla.org/docs/Web/HTML/Element/input) of `<input>`, for example to create a field where the user can enter its username you can use:
+Há diversos [tipos](https://developer.mozilla.org/docs/Web/HTML/Element/input) diferentes de `<input>`, por exemplo para criar um campot onde o usuário pode entrar com um "nome de usuário" você pode usar:
 
 ```html
 <input id="username" name="username" type="text">
 ```
 
-The `name` attribute will be used as the property name when the form data will be sent over. The `id` attribute is used to associate a `<label>` with the form control.
+O atributo `name` será usado como nome da propriedade quando os dados do formulário forem enviados. O atributo `id` é usado para associar um `<label>` ao controle do formulário.
 
-> Take a look at the whole list of [`<input>` types](https://developer.mozilla.org/docs/Web/HTML/Element/input) and [other form controls](https://developer.mozilla.org/docs/Learn/Forms/Other_form_controls) to get an idea of all the native UI elements you can use when building your UI.
+> Dê uma olhada em uma lista completa de [tipos de `<input>`](https://developer.mozilla.org/docs/Web/HTML/Element/input) e [outros controles de formulário](https://developer.mozilla.org/docs/Learn/Forms/Other_form_controls) para ter uma ideia de todos os elementos nativos de UI você pode usar quando está construindo sua interface.
 
-✅ Note that `<input>` is an [empty element](https://developer.mozilla.org/docs/Glossary/Empty_element) on which you should *not* add a matching closing tag. You can however use the self-closing `<input/>` notation, but it's not required.
+✅ Note que `<input>` é um [elemento vazio](https://developer.mozilla.org/docs/Glossary/Empty_element) que no qual você não deve adicionar uma tag de fechamento. Você pode, entretanto, usar a notação auto-fechada `<input/>`, mas isso não é necessário.
 
-The `<button>` element within a form is a bit special. If you do not specify its `type` attribute, it will automatically submit the form data to the server when pressed. Here are the possible `type` values:
+O elemento `<button>` dentro de um formulário é um pouco especial. Se você não especificar seu atributo `type`, ele vai automaticamente enviar os dados do formulário para o servidor quando pressionado. Aqui os possíveis valores de `type`:
 
-- `submit`: The default within a `<form>`, the button triggers the form submit action.
-- `reset`: The button resets all the form controls to their initial values.
-- `button`: Do not assign a default behavior when the button is pressed. You can then assign custom actions to it using JavaScript.
+- `submit`: O comportamento padrão dentro de um `<form>`, o botão vai acionar a ação de envio do formulário.
+- `reset`: O botão coloca todos os controles de formulário para seus valores iniciais.
+- `button`: Não coloca no comportamento padrão quando o botão é pressionado. Você pode então colocar ações customizaveis nele, usando JavaScript.
 
-### Task
+### Tarefa
 
-Let's start by adding a form to the `login` template. We'll need a *username* field and a *Login* button.
+Vamos começar adicionando um formulário no nosso template `login`. Nós vamos precisar de um campo *nome de usuário* e um de *login*.
 
 ```html
 <template id="login">
@@ -62,7 +63,7 @@ Let's start by adding a form to the `login` template. We'll need a *username* fi
   <section>
     <h2>Login</h2>
     <form id="loginForm">
-      <label for="username">Username</label>
+      <label for="username">Nome de usuário</label>
       <input id="username" name="user" type="text">
       <button>Login</button>
     </form>
@@ -70,89 +71,88 @@ Let's start by adding a form to the `login` template. We'll need a *username* fi
 </template>
 ```
 
-If you take a closer look, you can notice that we also added a `<label>` element here. `<label>` elements are used to add a name to UI controls, such as our username field. Labels are important for the readability of your forms, but also comes with additional benefits:
+Se você olhar com atenção, pode notar que também adicionamos um elemento `<label>` aqui. Elementos `<label>` são usados para adicionar um nome para os controles de interface, assim como nosso campo de "nome de usuário". Labels são importantes para a leitura de nossos formulários, mas também vem com benefícios adicionais:
 
-- By associating a label to a form control, it helps users using assistive technologies (like a screen reader) to understand what data they're expected to provide.
-- You can click on the label to directly put focus on the associated input, making it easier to reach on touch-screen based devices.
+- Ao associar uma label a um controle de formulário, ajuda os usuários que usam tecnologias assistivas (como um leitor de tela) a entender quais dados devem fornecer.
+- Você pode clicar na label para focar diretamente na entrada associada, facilitando o acesso em dispositivos baseados em tela sensível ao toque.
 
-> [Accessibility](https://developer.mozilla.org/docs/Learn/Accessibility/What_is_accessibility) on the web is a very important topic that's often overlooked. Thanks to [semantic HTML elements](https://developer.mozilla.org/docs/Learn/Accessibility/HTML) it's not difficult to create accessible content if you use them properly. You can [read more about accessibility](https://developer.mozilla.org/docs/Web/Accessibility) to avoid common mistakes and become a responsible developer.
+> [Acessibilidade](https://developer.mozilla.org/docs/Learn/Accessibility/What_is_accessibility) na internet é um tópico importante que frequentemente é esquecido. Graças a [semântica dos elementos HTML](https://developer.mozilla.org/docs/Learn/Accessibility/HTML) não é difícil de criar conteúdos acesessíveis se você usar eles adequadamente. Você pode [ler mais sobre acessibilidade](https://developer.mozilla.org/docs/Web/Accessibility) para evitar erros comuns e se tornar um desenvolvedor responsavel.
 
 Now we'll add a second form for the registration, just below the previous one:
+Agora nós vamos adicionar um segundo `<form>` para o registro de usuário, logo abaixo do anterior.
 
 ```html
 <hr/>
-<h2>Register</h2>
+<h2>Registro</h2>
 <form id="registerForm">
-  <label for="user">Username</label>
+  <label for="user">Nome de usuário</label>
   <input id="user" name="user" type="text">
-  <label for="currency">Currency</label>
+  <label for="currency">Moeda</label>
   <input id="currency" name="currency" type="text" value="$">
-  <label for="description">Description</label>
+  <label for="description">Descrição</label>
   <input id="description" name="description" type="text">
-  <label for="balance">Current balance</label>
+  <label for="balance">Balanço atual</label>
   <input id="balance" name="balance" type="number" value="0">
-  <button>Register</button>
+  <button>Registrar</button>
 </form>
 ```
 
-Using the `value` attribute we can define a default value for a given input.
-Notice also that the input for `balance` has the `number` type. Does it look different than the other inputs? Try interacting with it.
+Usando o atributo `value` nós podemos definir uma entrada padrão para o dado campo.
+Note também que a entrada para `balance` tem o tipo `number`. Ele parece diferente das outras entradas? Tente interagir com ele.
 
-✅ Can you navigate and interact with the forms using only a keyboard? How would you do that?
+✅ Você consegue navegar e interagir com os formulários usando apenas um teclado? Como você faria isso?
 
-## Submitting data to the server
+## Enviando dados para o servidor
 
-Now that we have a functional UI, the next step is to send the data over to our server. Let's make a quick test using our current code: what happens if you click on the *Login* or *Register* button?
+Agora que temos uma UI funcional, o próximo passo é enviar os dados para o nosso servidor. Vamos fazer um teste rápido usando nosso código atual: o que acontece se você clicar no botão *Login* ou *Registrar*?
 
-Did you notice the change in your browser's URL section?
+Você notou a mudança na seção URL do seu navegador?
 
-![Screenshot of the browser's URL change after clicking the Register button](./images/click-register.png)
+A ação padrão de um `<form>` é de enviar o formulário para o atual servidor da URL usando o [Método GET](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.3), anexando os dados do formulário diretamente ao URL. Este método tem algumas deficiências:
 
-The default action for a `<form>` is to submit the form to the current server URL using the [GET method](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.3), appending the form data directly to the URL. This method has some shortcomings though:
+- Os dados enviados são de tamanho muito limitado (cerca de 2.000 caracteres)
+- Os dados são diretamente visíveis na URL (não é bom para senhas)
+- Não funciona com upload de arquivos
 
-- The data sent is very limited in size (about 2000 characters)
-- The data is directly visible in the URL (not great for passwords)
-- It does not work with file uploads
+É por isso que você pode mudar isso usando o [Método POST](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.5) que envia os dados do formulário para o servidor em um corpo de uma requisição HTTP, sem as limitações faladas anteriormente.
 
-That's why you can change it to use the [POST method](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.5) which sends the form data to the server in the body of the HTTP request, without any of the previous limitations.
+> Enquanto o POST é o método mais comumente usado para enviar dados adiante, [em alguns cenários especificos](https://www.w3.org/2001/tag/doc/whenToUseGet.html) se prefere usar o método GET, enquanto implementa um campo de busca por exemplo.
 
-> While POST is the most commonly used method to send data over, [in some specific scenarios](https://www.w3.org/2001/tag/doc/whenToUseGet.html) it is preferable to use the GET method, when implementing a search field for example.
+### Tarefa
 
-### Task
-
-Add `action` and `method` properties to the registration form:
+Adicionar as propriedades `action` e `method` no formulário de registro:
 
 ```html
 <form id="registerForm" action="//localhost:5000/api/accounts" method="POST">
 ```
 
-Now try to register a new account with your name. After clicking on the *Register* button you should see something like this:
+Agora tente registrar uma nova conta com seu nome. Depois de clicar no botão *Registrar* você deve ver algo como isso: After clicking on the *Register* button you should see something like this:
 
-![A browser window at the address localhost:5000/api/accounts, showing a JSON string with user data](./images/form-post.png)
+![A browser window at the address localhost:5000/api/accounts, showing a JSON string with user data](https://github.com/CursoExtensaoUFSC/DesenvolvimenteWebUFSC/blob/main/Aula%209/images/form-post.png)
 
-If everything goes well, the server should answer your request with a [JSON](https://www.json.org/json-en.html) response containing the account data that was created.
+Se tudo ocorrer bem, o servidor deve te responder sua requisição com uma resposta [JSON](https://www.json.org/json-en.html) contendo os dados da conta que foi criada.
 
-✅ Try registering again with the same name. What happens?
+✅ Tente se registrar novamente com o mesmo nome. O que acontece?
 
-## Submitting data without reloading the page
+## Enviando dados sem recarregar a página
 
-As you probably noticed, there's a slight issue with the approach we just used: when submitting the form, we get out of our app and the browser redirects to the server URL. We're trying to avoid all page reloads with our web app, as we're making a [Single-page application (SPA)](https://en.wikipedia.org/wiki/Single-page_application).
+Como você provavelmente notou, há um pequeno problema com a abordagem que acabamos de usar: ao enviar o formulário, saímos do nosso aplicativo e o navegador redireciona para a URL do servidor. Estamos tentando evitar todas as atualizações de páginas com nosso aplicativo da web, já que estamos fazendo uma [Aplicação de Página Única (SPA)](https://en.wikipedia.org/wiki/Single-page_application).
 
-To send the form data to the server without forcing a page reload, we have to use JavaScript code. Instead of putting an URL in the `action` property of a `<form>` element, you can use any JavaScript code prepended by the `javascript:` string to perform a custom action. Using this also means that you'll have to implement some tasks that were previously done automatically by the browser:
+Para enviar os dados do formulário ao servidor sem forçar o recarregamento da página, temos que usar o código JavaScript. Em vez de colocar uma URL na propriedade `action` de um elemento `<form>`, você pode usar qualquer código JavaScript prefixado pela string `javascript:` para executar uma ação personalizada. Usar isso também significa que você terá que implementar algumas tarefas que antes eram feitas automaticamente pelo navegador:
 
-- Retrieve the form data
-- Convert and encode the form data to a suitable format
-- Create the HTTP request and send it to the server
+- Recuperar os dados do formulário
+- Converta e codifique os dados do formulário em um formato adequado
+- Crie a solicitação HTTP e envie-a para o servidor
 
-### Task
+### Tarefa
 
-Replace the registration form `action` with:
+Substituir o `action` no formulário de registro por:
 
 ```html
 <form id="registerForm" action="javascript:register()">
 ```
 
-Open `app.js` add a new function named `register`:
+Abra o `app.js` e adicione uma nova função de nome `register`:
 
 ```js
 function register() {
@@ -163,9 +163,9 @@ function register() {
 }
 ```
 
-Here we retrieve the form element using `getElementById()` and use the [`FormData`](https://developer.mozilla.org/docs/Web/API/FormData) helper to extract the values from form controls as a set of key/value pairs. Then we convert the data to a regular object using [`Object.fromEntries()`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries) and finally serialize the data to [JSON](https://www.json.org/json-en.html), a format commonly used for exchanging data on the web.
+Aqui nós estamos obtendo o elemento `form` usando `getElementById()` e usando [`FormData`](https://developer.mozilla.org/docs/Web/API/FormData) para ajudar na extração dos valores que estão nos controladores de formulários em uma configuração de pares de chave/valor. Então nós convertemos os dados em um objeto regular usando [`Object.fromEntries()`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries) e finalmente serializando os dados para um [JSON](https://www.json.org/json-en.html), formato comumente usado para trocas de dados na web.
 
-The data is now ready to be sent to the server. Create a new function named `createAccount`:
+Os dados agora estão prontos para serem enviados ao servidor. Crie uma nova função chamada `createAccount`:
 
 ```js
 async function createAccount(account) {
@@ -182,34 +182,34 @@ async function createAccount(account) {
 }
 ```
 
-What's this function doing? First, notice the `async` keyword here. This means that the function contains code that will execute [**asynchronously**](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function). When used along the `await` keyword, it allows waiting for asynchronous code to execute - like waiting for the server response here - before continuing.
+O que essa função está fazendo? Primeiro, note a palavra-chave `async`. Isso significa que a função contêm um código que será executado [**de forma assíncrona**](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function). Quando usado junto com a palavra-chave `await`, permite aguardar a execução do código assíncrono - como esperar pela resposta do servidor - antes de continuar.
 
-Here's a quick video about `async/await` usage:
+Aqui está um vídeo rápido sobre o uso de `async/await`:
 
 [![Async and Await for managing promises](https://img.youtube.com/vi/YwmlRkrxvkk/0.jpg)](https://youtube.com/watch?v=YwmlRkrxvkk "Async and Await for managing promises")
 
-> 🎥 Click the image above for a video about async/await.
+> 🎥 Clique na imagem acima para ver um vídeo sobre async/await.
 
-We use the `fetch()` API to send JSON data to the server. This method takes 2 parameters:
+Usamos a API `fetch()` para enviar dados JSON para o servidor. Este método leva 2 parâmetros:
 
-- The URL of the server, so we put back `//localhost:5000/api/accounts` here.
-- The settings of the request. That's where we set the method to `POST` and provide the `body` for the request. As we're sending JSON data to the server, we also need to set the `Content-Type` header to `application/json` so the server know how to interpret the content.
+- A URL do servidor, então colocamos novamente `//localhost:5000/api/accounts` aqui.
+- As configurações da solicitação. É aí que definimos o método como `POST` e fornecemos o `body` para a solicitação. Como estamos enviando dados JSON para o servidor, também precisamos definir o cabeçalho `Content-Type` como `application/json` para que o servidor saiba como interpretar o conteúdo.
 
-As the server will respond to the request with JSON, we can use `await response.json()` to parse the JSON content and return the resulting object. Note that this method is asynchronous, so we use the `await` keyword here before returning to make sure any errors during parsing are also caught.
+Como o servidor responderá à solicitação com JSON, podemos usar `await response.json()` para analisar o conteúdo JSON e retornar o objeto resultante. Observe que este método é assíncrono, então usamos a palavra-chave `await` aqui antes de retornar para garantir que quaisquer erros durante a análise também sejam detectados.
 
-Now add some code to the `register` function to call `createAccount()`:
+Agora adicione mais um código à função `register` para chamar `createAccount()`:
 
 ```js
 const result = await createAccount(jsonData);
 ```
 
-Because we use the `await` keyword here, we need to add the `async` keyword before the register function:
+Como usamos a palavra-chave `await` aqui, precisamos adicionar a palavra-chave `async` antes da função de registro:
 
 ```js
 async function register() {
 ```
 
-Finally, let's add some logs to check the result. The final function should look like this:
+Finalmente, vamos adicionar alguns logs para verificar o resultado. A função final deverá ficar assim:
 
 ```js
 async function register() {
@@ -226,41 +226,39 @@ async function register() {
 }
 ```
 
-That was a bit long but we got there! If you open your [browser developer tools](https://developer.mozilla.org/docs/Learn/Common_questions/What_are_browser_developer_tools), and try registering a new account, you should not see any change on the web page but a message will appear in the console confirming that everything works.
+Se você abrir sua [ferramenta de desenvolvedor](https://developer.mozilla.org/docs/Learn/Common_questions/What_are_browser_developer_tools), e tente registrar uma nova conta, você não deverá ver nenhuma alteração na página da web, mas uma mensagem aparecerá no console confirmando que tudo funciona.
 
-![Screenshot showing log message in the browser console](./images/browser-console.png)
+✅Você acha que os dados são enviados para o servidor com segurança? E se alguém conseguisse interceptar a solicitação? Você pode ler sobre [HTTPS](https://en.wikipedia.org/wiki/HTTPS) para saber mais sobre comunicação segura de dados.
 
-✅ Do you think the data is sent to the server securely? What if someone what was able to intercept the request? You can read about [HTTPS](https://en.wikipedia.org/wiki/HTTPS) to know more about secure data communication.
+## Validação de dados
 
-## Data validation
+Se você tentar registrar uma nova conta sem definir um nome de usuário primeiro, poderá ver que o servidor retorna um erro com o código de status [400 (Bad Request)](https://developer.mozilla.org/docs/Web/HTTP/Status/400#:~:text=The%20HyperText%20Transfer%20Protocol%20(HTTP,%2C%20or%20deceptive%20request%20routing).).
 
-If you try to register a new account without setting an username first, you can see that the server returns an error with status code [400 (Bad Request)](https://developer.mozilla.org/docs/Web/HTTP/Status/400#:~:text=The%20HyperText%20Transfer%20Protocol%20(HTTP,%2C%20or%20deceptive%20request%20routing).).
+Antes de enviar os dados para o servidor é uma boa pratica [validar os dados de formulário](https://developer.mozilla.org/docs/Learn/Forms/Form_validation) de antemão quando possível, para ter certeza de enviar uma solicitação válida. Os controles de formulários HTML5 fornecem validação integrada usando vários atributos:
 
-Before sending data to a server it's a good practice to [validate the form data](https://developer.mozilla.org/docs/Learn/Forms/Form_validation) beforehand when possible, to make sure you send a valid request. HTML5 forms controls provides built-in validation using various attributes:
+- `required`: o campo precisa ser preenchido, caso contrário o formulário não será enviado.
+- `minlength` and `maxlength`: define o máximo e mínimo número de caracteres no campo de texto.
+- `min` and `max`: define um máximo e mínimo nos valores em campos de números.
+- `type`: define o tipo esperado de dado, como `number`, `email`, `file` ou [outros tipos integrados](https://developer.mozilla.org/docs/Web/HTML/Element/input). Este atributo também pode alterar a renderização visual do controle de formulário.
+- `pattern`: permite definir um padrão de [expressão regular](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Regular_Expressions) para testar a entrada se os dados de entrada são validos ou não.
 
-- `required`: the field needs to be filled otherwise the form cannot be submitted.
-- `minlength` and `maxlength`: defines the minimum and maximum number of characters in text fields.
-- `min` and `max`: defines the minimum and maximum value of a numerical field.
-- `type`: defines the kind of data expected, like `number`, `email`, `file` or [other built-in types](https://developer.mozilla.org/docs/Web/HTML/Element/input). This attribute may also change the visual rendering of the form control.
-- `pattern`: allows to define a [regular expression](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Regular_Expressions) pattern to test if the entered data is valid or not.
-
-> Tip: you can customize the look of your form controls depending if they're valid or not using the `:valid` and `:invalid` CSS pseudo-classes.
+> Dica: você pode personalizar a aparência dos controles do seu formulário dependendo se eles são válidos ou não usando as pseudoclasses CSS `:valid` e `:invalid`.
 
 ### Task
 
-There are 2 required fields to create a valid new account, the username and currency, the other fields being optional. Update the form's HTML, using both the `required` attribute and text in the field's label to that:
+Existem 2 campos obrigatórios para criar uma nova conta válida, o nome de usuário e a moeda, sendo os demais campos opcionais. Atualize o HTML do formulário, usando o atributo `required` e o texto no rótulo do campo para isso:
 
 ```html
-<label for="user">Username (required)</label>
+<label for="user">Nome de usuário (required)</label>
 <input id="user" name="user" type="text" required>
 ...
-<label for="currency">Currency (required)</label>
+<label for="currency">Moeda (required)</label>
 <input id="currency" name="currency" type="text" value="$" required>
 ```
 
-While this particular server implementation does not enforce specific limits on the fields maximum length, it's always a good practice to define reasonable limits for any user text entry.
+Embora esta implementação de servidor específica não imponha limites específicos ao comprimento máximo dos campos, é sempre uma boa prática definir limites razoáveis para qualquer entrada de texto do usuário.
 
-Add a `maxlength` attribute to the text fields:
+Adicione um atributo `maxlength` aos campos de texto:
 
 ```html
 <input id="user" name="user" type="text" maxlength="20" required>
@@ -270,32 +268,24 @@ Add a `maxlength` attribute to the text fields:
 <input id="description" name="description" type="text" maxlength="100">
 ```
 
-Now if you press the *Register* button and a field does not respect a validation rule we defined, you should see something like this:
+Validação como essa realizada *antes* de enviar qualquer dado ao servidor é chamada de validação **client-side**. Mas observe que nem sempre é possível realizar todas as verificações sem enviar os dados. Por exemplo, não podemos verificar aqui se já existe uma conta com o mesmo nome de usuário sem enviar uma solicitação ao servidor. A validação adicional realizada no servidor é chamada de validação **server-side**.
 
-![Screenshot showing the validation error when trying to submit the form](./images/validation-error.png)
-
-Validation like this performed *before* sending any data to the server is called **client-side** validation. But note that's it's not always possible to perform all checks without sending the data. For example, we cannot check here if an account already exists with the same username without sending a request to the server. Additional validation performed on the server is called **server-side** validation.
-
-Usually both need to be implemented, and while using client-side validation improves the user experience by providing instant feedback to the user, server-side validation is crucial to make sure the user data you manipulate is sound and safe.
+Normalmente, ambos precisam ser implementados e, embora o uso da validação do lado do cliente melhore a experiência do usuário, fornecendo feedback instantâneo ao usuário, a validação do lado do servidor é crucial para garantir que os dados do usuário que você manipula sejam sólidos e seguros.
 
 ---
 
-## 🚀 Challenge
+## 🚀 Desafio
 
-Show an error message in the HTML if the user already exists.
+Mostrar uma mensagem de erro no HTML se o usuário já existir.
 
-Here's an example of what the final login page can look like after a bit of styling:
-
-![Screenshot of the login page after adding CSS styles](./images/result.png)
-
-## Post-Lecture Quiz
+## Quiz pós-lição
 
 [Quiz pós-lição](https://ashy-river-0debb7803.1.azurestaticapps.net/quiz/44)
 
-## Review & Self Study
+## Revisão e autoestudo
 
-Developers have gotten very creative about their form building efforts, especially regarding validation strategies. Learn about different form flows by looking through [CodePen](https://codepen.com); can you find some interesting and inspiring forms?
+Os desenvolvedores têm sido muito criativos em seus esforços de construção de formulários, especialmente em relação às estratégias de validação. Aprenda sobre os diferentes fluxos de formulários consultando [CodePen](https://codepen.com); você pode encontrar algumas formas interessantes e inspiradoras?
 
-## Assignment
+## Atribuição
 
-[Style your bank app](assignment.md)
+[Estilize seu aplicativo de banco](assignment.md)
