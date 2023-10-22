@@ -44,21 +44,21 @@ Poderíamos atualizar nosso código para resolver esses problemas um por um, mas
 
 Depois de cuidar disso, quaisquer outros problemas que você possa ter podem já ter sido corrigidos ou ter se tornado mais fáceis de corrigir. Existem muitas abordagens possíveis para resolver esses problemas, mas optaremos por uma solução comum que consiste em **centralizar os dados e as formas de alterá-los**. Os fluxos de dados seriam assim:
 
-![Schema showing the data flows between the HTML, user actions and state](./images/data-flow.png)
+![Schema showing the data flows between the HTML, user actions and state](../images/data-flow.png)
 
-> We won't cover here the part where the data automatically triggers the view update, as it's tied to more advanced concepts of [Reactive Programming](https://en.wikipedia.org/wiki/Reactive_programming). It's a good follow-up subject if you're up to a deep dive.
+> Não abordaremos aqui a parte em que os dados acionam automaticamente a atualização da visualização, pois estão vinculados a conceitos mais avançados de [Programas Reativos](https://en.wikipedia.org/wiki/Reactive_programming). É um bom assunto para acompanhamento se você quiser se aprofundar.
 
-✅ There are a lot of libraries out there with different approaches to state management, [Redux](https://redux.js.org) being a popular option. Take a look at the concepts and patterns used as it's often a good way to learn what potential issues you may be facing in large web apps and how it can be solved.
+✅ Existem muitas bibliotecas por aí com diferentes abordagens para a gestão do estado, [Redux](https://redux.js.org) tem sido uma opção popular. Dê uma olhada nos conceitos e padrões usados, pois geralmente é uma boa maneira de saber quais problemas potenciais você pode estar enfrentando em grandes aplicativos da web e como eles podem ser resolvidos.
 
-### Task
+### Tarefa
 
-We'll start with a bit of refactoring. Replace the `account` declaration:
+Começaremos com um pouco de refatoração. Substitua a declaração `account`:
 
 ```js
 let account = null;
 ```
 
-With:
+Por:
 
 ```js
 let state = {
@@ -66,21 +66,21 @@ let state = {
 };
 ```
 
-The idea is to *centralize* all our app data in a single state object. We only have `account` for now in the state so it doesn't change much, but it creates a path for evolutions.
+A ideia é *centralizar* todos os dados do nosso aplicativo em um único objeto de estado. Só temos `conta` por enquanto no estado então não muda muita coisa, mas cria um caminho para evoluções.
 
-We also have to update the functions using it. In the `register()` and `login()` functions, replace `account = ...` with `state.account = ...`;
+Também temos que atualizar as funções que o utilizam. Nas funções `register()` e `login()`, substitua `account = ...` por `state.account = ...`;
 
-At the top of the `updateDashboard()` function, add this line:
+No topo da função `updateDashboard()`, adicione esta linha:
 
 ```js
 const account = state.account;
 ```
 
-This refactoring by itself did not bring much improvements, but the idea was to lay out the foundation for the next changes.
+Essa refatoração por si só não trouxe muitas melhorias, mas a ideia era lançar as bases para as próximas mudanças.
 
-## Track data changes
+## Rastreie alterações de dados
 
-Now that we have put in place the `state` object to store our data, the next step is centralize the updates. The goal is to make it easier to keep track of any changes and when they happen.
+Agora que implementamos o objeto `state` para armazenar nossos dados, o próximo passo é centralizar as atualizações. O objetivo é tornar mais fácil acompanhar quaisquer alterações e quando elas acontecem.
 
 To avoid having changes made to the `state` object, it's also a good practice to consider it [*immutable*](https://en.wikipedia.org/wiki/Immutable_object), meaning that it cannot be modified at all. It also means that you have to create a new state object if you want to change anything in it. By doing this, you build a protection about potentially unwanted [side effects](https://en.wikipedia.org/wiki/Side_effect_(computer_science)), and open up possibilities for new features in your app like implementing undo/redo, while also making it easier to debug. For example, you could log every change made to the state and keep a history of the changes to understand the source of a bug.
 
