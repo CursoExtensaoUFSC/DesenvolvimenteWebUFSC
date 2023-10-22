@@ -1,20 +1,20 @@
-# Build a Banking App Part 3: Methods of Fetching and Using Data
+# Construindo um App de Banco Parte 3: Métodos de Fetching e Usos de Dados
 
-## Pre-Lecture Quiz
+## Quiz pré-lição
 
 [Quiz pré-lição](https://ashy-river-0debb7803.1.azurestaticapps.net/quiz/45)
 
-### Introduction
+### Introdução
 
-At the core of every web application there's *data*. Data can take many forms, but its main purpose is always to display information to the user. With web apps becoming increasingly interactive and complex, how the user accesses and interacts with information is now a key part of web development.
+No centro de cada aplicação web existem *dados*. Os dados podem assumir diversas formas, mas seu objetivo principal é sempre exibir informações ao usuário. Com os aplicativos web se tornando cada vez mais interativos e complexos, a forma como o usuário acessa e interage com as informações é agora uma parte fundamental do desenvolvimento web.
 
-In this lesson, we'll see how to fetch data from a server asynchronously, and use this data to display information on a web page without reloading the HTML.
+Nesta lição, veremos como buscar dados de um servidor de forma assíncrona e usar esses dados para exibir informações em uma página da web sem recarregar o HTML.
 
-### Prerequisite
+### Pré-requisitos
 
-You need to have built the [Login and Registration Form](../2-formularios/README.md) part of the web app for this lesson. You also need to install [Node.js](https://nodejs.org) and [run the server API](../api/README.md) locally so you get account data.
+Você precisa ter construído o [Formulário de Login e Registro](../2-formularios/README.md) do aplicativo web para essa lição. Precisa ter instalado o [Node.js](https://nodejs.org) e [rodar o servidor API](../api/README.md) localmente para obter os dados das contas.
 
-You can test that the server is running properly by executing this command in a terminal:
+Você pode verificar se o servidor está rodando de forma correnta executando o comando abaixo no terminal:
 
 ```sh
 curl http://localhost:5000/api
