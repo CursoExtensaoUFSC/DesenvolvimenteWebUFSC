@@ -287,4 +287,16 @@ Os desenvolvedores têm sido muito criativos em seus esforços de construção d
 
 ## Atribuição
 
-[Estilize seu aplicativo de banco](assignment.md)
+# Estilize seu aplicativo
+
+## Instruções
+
+Crie um novo arquivo `styles.css` e adicione um link para ele em seu arquivo `index.html` atual. No arquivo CSS que você acabou de criar, adicione algum estilo para fazer com que a página *Login* e *Dashboard* pareçam bonitas e organizadas. Tente criar um tema de cores para dar ao seu aplicativo uma marca própria.
+
+> Dica: você pode modificar o HTML e adicionar novos elementos e classes se necessário.
+> 
+## Rubric
+
+| Criterios | Exemplar                                                                                                               | Adequado                                                                       | Pode Melhorar                                                                            |
+| -------- | ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------- |
+|          | Todas as páginas parecem limpas e legíveis, com um tema de cores consistente e as diferentes seções se destacando adequadamente. | As páginas são estilizadas, mas sem tema ou com seções não claramente delimitadas. | As páginas não têm estilo, as seções parecem desorganizadas e as informações são difíceis de ler. |
