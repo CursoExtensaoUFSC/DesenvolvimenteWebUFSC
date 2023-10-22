@@ -291,7 +291,7 @@ Agora tente usar os botões voltar e avançar do seu navegador e verifique se a 
 
 Adicione um novo modelo e direcione para uma terceira página que mostre os créditos deste aplicativo.
 
-## Post-Lecture Quiz
+## Quiz pós-lição
 
 [Quiz pós-lição](https://ashy-river-0debb7803.1.azurestaticapps.net/quiz/42)
 
