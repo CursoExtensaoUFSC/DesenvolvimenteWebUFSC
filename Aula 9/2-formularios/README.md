@@ -295,7 +295,7 @@ Crie um novo arquivo `styles.css` e adicione um link para ele em seu arquivo `in
 
 > Dica: você pode modificar o HTML e adicionar novos elementos e classes se necessário.
 > 
-## Rubric
+## Correção
 
 | Criterios | Exemplar                                                                                                               | Adequado                                                                       | Pode Melhorar                                                                            |
 | -------- | ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------- |
