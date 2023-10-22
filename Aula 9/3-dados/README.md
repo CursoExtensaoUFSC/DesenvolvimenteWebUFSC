@@ -325,18 +325,18 @@ Trabalhe em conjunto para fazer com que a página do painel pareça um aplicativ
 
 ## Atribuição
 
-# Refactor and comment your code
+# Refatore e comente seu código
 
-## Instructions
+## Instruções
 
-As your codebase grows, it's important to refactor your code frequently to keep it readable and maintainable over time. Add comments and refactor your `app.js` to improve the code quality:
+À medida que sua base de código cresce, é importante refatorar seu código com frequência para mantê-lo legível e sustentável ao longo do tempo. Adicione comentários e refatore seu `app.js` para melhorar a qualidade do código:
 
-- Extract constants, like the server API base URL
-- Factorize similar code: for example you can create a `sendRequest()` function to regroup the code used in both `createAccount()` and `getAccount()`
-- Reorganize the code to make it easier to read, and add comments
+- Extraia constantes, como o URL base da API do servidor
+- Fatorar código semelhante: por exemplo, você pode criar uma função `sendRequest()` para reagrupar o código usado em `createAccount()` e `getAccount()`
+- Reorganize o código para facilitar a leitura e adicione comentários
 
-## Rubric
+## Correção
 
-| Criteria | Exemplary                                                                                                                                                     | Adequate                                                                                          | Needs Improvement                                                                     |
+| Criterio | Exemplar                                                                                                                                                     | Adequado                                                                                          | Precisa de Melhorias                                                                     |
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-|          | Code is commented, well-organized in different sections and easy to read. Constants are extracted and a factorized `sendRequest()` function has been created. | Code is clean but can still be improved with more comments, constant extraction or factorization. | Code is messy, not commented, constants are not extracted and code is not factorized. |
+|          | O código é comentado, bem organizado em diferentes seções e de fácil leitura. As constantes são extraídas e uma função `sendRequest()` fatorada foi criada. | O código está limpo, mas ainda pode ser melhorado com mais comentários, extração constante ou fatoração. | O código está confuso, não é comentado, as constantes não são extraídas e o código não é fatorado. |
