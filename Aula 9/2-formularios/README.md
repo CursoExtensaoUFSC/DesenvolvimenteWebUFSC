@@ -12,7 +12,7 @@ Nesta parte usaremos formulários HTML para adicionar login e registro ao nosso 
 
 ### Pré-requisitos
 
-Você precisa ter completado [HTML templates e rotas](../1-template-route/README.md) de nosso web app para essa lição. Precisa ter instalado o [Node.js](https://nodejs.org) e [rodar o servidor API](../api/README.md) localmente para podermos evniar os dados para criar as contas.
+Você precisa ter completado [HTML templates e rotas](../1-template-route/README.md) de nosso web app para essa lição. Precisa ter instalado o [Node.js](https://nodejs.org) e [rodar o servidor API](../api/README.md) localmente para podermos enviar os dados para criar as contas.
 
 **Tomando nota**
 Você deve ter dois terminais rodando ao mesmo tempo como listado abaixo.
@@ -21,7 +21,6 @@ Você deve ter dois terminais rodando ao mesmo tempo como listado abaixo.
 
 Você precisa de dois servidores em funcionamento para prosseguir com o restante da lição. Eles estão escutando em portas diferentes (porta `3000` e porta `5000`), então tudo deve funcionar bem.
 
-You can test that the server is running properly by executing this command in a terminal:
 Você pode verificar se o servidor está rodando de forma correnta executando o comando abaixo no terminal:
 
 ```sh
