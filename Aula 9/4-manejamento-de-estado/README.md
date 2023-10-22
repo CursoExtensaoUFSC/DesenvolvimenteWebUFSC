@@ -1,20 +1,20 @@
-# Build a Banking App Part 4: Concepts of State Management
+# Construindo um Aplicativo de Banco Parte 4: Conceitos de Gestão do Estado
 
-## Pre-Lecture Quiz
+## Quiz pré-lição
 
 [Quiz pré-lição](https://ashy-river-0debb7803.1.azurestaticapps.net/quiz/47)
 
-### Introduction
+### Introdução
 
-As a web application grows, it becomes a challenge to keep track of all data flows. Which code gets the data, what page consumes it, where and when does it need to be updated...it's easy to end up with messy code that's difficult to maintain. This is especially true when you need to share data among different pages of your app, for example user data. The concept of *state management* has always existed in all kinds of programs, but as web apps keep growing in complexity it's now a key point to think about during development.
+À medida que uma aplicação web cresce, torna-se um desafio acompanhar todos os fluxos de dados. Qual código obtém os dados, qual página os consome, onde e quando eles precisam ser atualizados... é fácil acabar com um código confuso e difícil de manter. Isso é especialmente verdadeiro quando você precisa compartilhar dados entre diferentes páginas do seu aplicativo, por exemplo, dados do usuário. O conceito de *gestão de estado* sempre existiu em todos os tipos de programas, mas à medida que as aplicações web continuam a crescer em complexidade, este é agora um ponto-chave a considerar durante o desenvolvimento.
 
-In this final part, we'll look over the app we built to rethink how the state is managed, allowing support for browser refresh at any point, and persisting data across user sessions.
+Nesta parte final, examinaremos o aplicativo que construímos para repensar como o estado é gerenciado, permitindo suporte para atualização do navegador a qualquer momento e dados persistentes nas sessões do usuário.
 
-### Prerequisite
+### Pré-requisito
 
-You need to have completed the [data fetching](../3-dados/README.md) part of the web app for this lesson. You also need to install [Node.js](https://nodejs.org) and [run the server API](../api/README.md) locally so you can manage account data.
+Você precisa ter completado a parte de [data fetching](../3-dados/README.md) do aplicativo web para essa lição. Precisa ter instalado o [Node.js](https://nodejs.org) e [rodar o servidor API](../api/README.md) localmente para você conseguir gerir os dados das contas.
 
-You can test that the server is running properly by executing this command in a terminal:
+Você pode testar se o servidor está funcionando corretamente executando este comando em um terminal:
 
 ```sh
 curl http://localhost:5000/api
@@ -23,26 +23,26 @@ curl http://localhost:5000/api
 
 ---
 
-## Rethink state management
+## Repensando com gestão do estado
 
-In the [previous lesson](../3-dados/README.md), we introduced a basic concept of state in our app with the global `account` variable which contains the bank data for the currently logged in user. However, our current implementation has some flaws. Try refreshing the page when you're on the dashboard. What happens?
+Na [lição anterior](../3-dados/README.md), introduzimos um conceito básico de estado em nosso aplicativo com a variável global `account` que contém os dados bancários do usuário atualmente logado. No entanto, nossa implementação atual apresenta algumas falhas. Tente atualizar a página quando estiver no painel. O que acontece?
 
-There's 3 issues with the current code:
+Existem 3 problemas com o código atual:
 
-- The state is not persisted, as a browser refresh takes you back to the login page.
-- There are multiple functions that modify the state. As the app grows, it can make it difficult to track the changes and it's easy to forget updating one.
-- The state is not cleaned up, so when you click on *Logout* the account data is still there even though you're on the login page.
+- O estado não é persistente, pois uma atualização do navegador leva você de volta à página de login.
+- Existem múltiplas funções que modificam o estado. À medida que o aplicativo cresce, pode ser difícil rastrear as alterações e é fácil esquecer de atualizá-lo.
+- O estado não é limpo, então quando você clica em *Logout* os dados da conta ainda estão lá mesmo que você esteja na página de login.
 
-We could update our code to tackle these issues one by one, but it would create more code duplication and make the app more complex and difficult to maintain. Or we could pause for a few minutes and rethink our strategy.
+Poderíamos atualizar nosso código para resolver esses problemas um por um, mas isso criaria mais duplicação de código e tornaria o aplicativo mais complexo e difícil de manter. Ou poderíamos fazer uma pausa por alguns minutos e repensar a nossa estratégia.
 
-> What problems are we really trying to solve here?
+> Que problemas estamos realmente tentando resolver aqui?
 
-[State management](https://en.wikipedia.org/wiki/State_management) is all about finding a good approach to solve these two particular problems:
+[Manejamento de Estado](https://en.wikipedia.org/wiki/State_management) trata-se de encontrar uma boa abordagem para resolver estes dois problemas específicos:
 
-- How to keep the data flows in an app understandable?
-- How to keep the state data always in sync with the user interface (and vice versa)?
+- Como manter os fluxos de dados em um aplicativo compreensíveis?
+- Como manter os dados de estado sempre sincronizados com a interface do usuário (e vice-versa)?
 
-Once you've taken care of these, any other issues you might have may either be fixed already or have become easier to fix. There are many possible approaches for solving these problems, but we'll go with a common solution that consists of **centralizing the data and the ways to change it**. The data flows would go like this:
+Depois de cuidar disso, quaisquer outros problemas que você possa ter podem já ter sido corrigidos ou ter se tornado mais fáceis de corrigir. Existem muitas abordagens possíveis para resolver esses problemas, mas optaremos por uma solução comum que consiste em **centralizar os dados e as formas de alterá-los**. Os fluxos de dados seriam assim:
 
 ![Schema showing the data flows between the HTML, user actions and state](./images/data-flow.png)
 
