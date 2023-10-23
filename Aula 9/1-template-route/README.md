@@ -1,4 +1,4 @@
-# Crie um aplicativo bancário, parte 1: modelos HTML e rotas em um aplicativo da web
+# Crie um aplicativo bancário, parte 1: templates HTML e rotas em um aplicativo da web
 
 ## Quiz Pré-Lição
 
@@ -8,7 +8,7 @@
 
 Desde o advento do JavaScript nos navegadores, os sites estão se tornando mais interativos e complexos do que nunca. As tecnologias da Web agora são comumente usadas para criar aplicativos totalmente funcionais que são executados diretamente em um navegador que chamamos de aplicativos da Web. Como os aplicativos da Web são altamente interativos, os usuários não querem esperar o recarregamento completo da página sempre que uma ação é executada. É por isso que o JavaScript é usado para atualizar o HTML diretamente usando o DOM, para fornecer uma experiência de usuário mais tranquila.
 
-Nesta lição, apresentaremos as bases para criar um aplicativo web bancário, usando modelos HTML para criar várias telas que podem ser exibidas e atualizadas sem a necessidade de recarregar a página HTML inteira.
+Nesta lição, apresentaremos as bases para criar um aplicativo web bancário, usando templates HTML para criar várias telas que podem ser exibidas e atualizadas sem a necessidade de recarregar a página HTML inteira.
 
 ### Pré-requisitos
 
@@ -55,7 +55,7 @@ Estamos dando a ele um `id` para facilitar a localização posterior com JavaScr
 
 > Dica: como o conteúdo deste elemento será substituído, podemos colocar uma mensagem ou indicador de carregamento que será mostrado enquanto o aplicativo estiver carregando.
 
-A seguir, vamos adicionar abaixo o modelo HTML para a página de login. Por enquanto colocaremos ali apenas um título e uma seção contendo um link que utilizaremos para realizar a navegação.
+A seguir, vamos adicionar abaixo o template HTML para a página de login. Por enquanto colocaremos ali apenas um título e uma seção contendo um link que utilizaremos para realizar a navegação.
 
 ```html
 <template id="login">
@@ -66,7 +66,7 @@ A seguir, vamos adicionar abaixo o modelo HTML para a página de login. Por enqu
 </template>
 ```
 
-Em seguida, adicionaremos outro modelo HTML para a página do painel. Esta página conterá diferentes seções:
+Em seguida, adicionaremos outro template HTML para a página do painel. Esta página conterá diferentes seções:
 
 - Um cabeçalho com um título e um link de logout
 - O saldo atual da conta bancária
@@ -97,21 +97,21 @@ Em seguida, adicionaremos outro modelo HTML para a página do painel. Esta pági
 </template>
 ```
 
-> Dica: ao criar modelos HTML, se você quiser ver como ficará, você pode comentar as linhas `<template>` e `</template>` colocando-as entre `<!-- -->` .
+> Dica: ao criar templates HTML, se você quiser ver como ficará, você pode comentar as linhas `<template>` e `</template>` colocando-as entre `<!-- -->` .
 
-✅ Por que você acha que usamos atributos `id` nos modelos? Poderíamos usar algo mais como classes?
+✅ Por que você acha que usamos atributos `id` nos templates? Poderíamos usar algo mais como classes?
 
 ## Mostrando templates com JavaScript
 
-Se você tentar seu arquivo HTML atual em um navegador, verá que ele trava exibindo `Loading...`. Isso ocorre porque precisamos adicionar algum código JavaScript para instanciar e exibir os modelos HTML.
+Se você tentar seu arquivo HTML atual em um navegador, verá que ele trava exibindo `Loading...`. Isso ocorre porque precisamos adicionar algum código JavaScript para instanciar e exibir os templates HTML.
 
-A instanciação de um modelo geralmente é feita em 3 etapas:
+A instanciação de um template geralmente é feita em 3 etapas:
 
 1. Recupere o elemento template no DOM, por exemplo usando [`document.getElementById`](https://developer.mozilla.org/docs/Web/API/Document/getElementById).
-2. Clone o elemento do modelo, usando [`cloneNode`](https://developer.mozilla.org/docs/Web/API/Node/cloneNode).
+2. Clone o elemento do template, usando [`cloneNode`](https://developer.mozilla.org/docs/Web/API/Node/cloneNode).
 3. Anexe-o ao DOM sob um elemento visível, por exemplo usando [`appendChild`](https://developer.mozilla.org/docs/Web/API/Node/appendChild).
 
-✅ Por que precisamos clonar o modelo antes de anexá-lo ao DOM? O que você acha que aconteceria se pulássemos esta etapa?
+✅ Por que precisamos clonar o template antes de anexá-lo ao DOM? O que você acha que aconteceria se pulássemos esta etapa?
 
 ### Tarefa
 
@@ -133,9 +133,9 @@ function updateRoute(templateId) {
 }
 ```
 
-O que fazemos aqui são exatamente as 3 etapas descritas acima. Instanciamos o modelo com o id `templateId` e colocamos seu conteúdo clonado em nosso espaço reservado para aplicativo. Observe que precisamos usar `cloneNode(true)` para copiar toda a subárvore do modelo.
+O que fazemos aqui são exatamente as 3 etapas descritas acima. Instanciamos o template com o id `templateId` e colocamos seu conteúdo clonado em nosso espaço reservado para aplicativo. Observe que precisamos usar `cloneNode(true)` para copiar toda a subárvore do template.
 
-Agora chame esta função com um dos modelos e veja o resultado.
+Agora chame esta função com um dos templates e veja o resultado.
 
 ```js
 updateRoute('login');
@@ -161,11 +161,11 @@ https://site.com/login.html --> mywebsite/login.html
 https://site.com/admin/     --> mywebsite/admin/index.html
 ```
 
-No entanto, para nosso aplicativo web estamos usando um único arquivo HTML contendo todas as telas, portanto esse comportamento padrão não nos ajudará. Temos que criar este mapa manualmente e atualizar o modelo exibido usando JavaScript.
+No entanto, para nosso aplicativo web estamos usando um único arquivo HTML contendo todas as telas, portanto esse comportamento padrão não nos ajudará. Temos que criar este mapa manualmente e atualizar o template exibido usando JavaScript.
 
 ### Tarefa
 
-Usaremos um objeto simples para implementar um [mapa](https://en.wikipedia.org/wiki/Associative_array) entre caminhos de URL e nossos modelos. Adicione este objeto na parte superior do seu arquivo `app.js`.
+Usaremos um objeto simples para implementar um [mapa](https://en.wikipedia.org/wiki/Associative_array) entre caminhos de URL e nossos templates. Adicione este objeto na parte superior do seu arquivo `app.js`.
 
 ```js
 const routes = {
@@ -174,7 +174,7 @@ const routes = {
 };
 ```
 
-Agora vamos modificar um pouco a função `updateRoute`. Em vez de passar diretamente o `templateId` como argumento, queremos recuperá-lo olhando primeiro a URL atual e, em seguida, usar nosso mapa para obter o valor de ID do modelo correspondente. Nós podemos usar [`window.location.pathname`](https://developer.mozilla.org/docs/Web/API/Location/pathname) para obter apenas a seção do caminho do URL.
+Agora vamos modificar um pouco a função `updateRoute`. Em vez de passar diretamente o `templateId` como argumento, queremos recuperá-lo olhando primeiro a URL atual e, em seguida, usar nosso mapa para obter o valor de ID do template correspondente. Nós podemos usar [`window.location.pathname`](https://developer.mozilla.org/docs/Web/API/Location/pathname) para obter apenas a seção do caminho do URL.
 
 ```js
 function updateRoute() {
@@ -189,7 +189,7 @@ function updateRoute() {
 }
 ```
 
-Aqui mapeamos as rotas que declaramos para o modelo correspondente. Você pode testar se funciona corretamente alterando o URL manualmente em seu navegador.
+Aqui mapeamos as rotas que declaramos para o template correspondente. Você pode testar se funciona corretamente alterando o URL manualmente em seu navegador.
 
 ✅ O que acontece se você inserir um caminho desconhecido na URL? Como poderíamos resolver isso?
 
@@ -198,7 +198,7 @@ Aqui mapeamos as rotas que declaramos para o modelo correspondente. Você pode t
 O próximo passo do nosso aplicativo é adicionar a possibilidade de navegar entre as páginas sem ter que alterar a URL manualmente. Isto implica duas coisas:
 
    1. Atualizando o URL atual
-   2. Atualizando o modelo exibido com base no novo URL
+   2. Atualizando o template exibido com base no novo URL
 
 Já cuidamos da segunda parte com a função `updateRoute`, então temos que descobrir como atualizar a URL atual.
 
@@ -217,7 +217,7 @@ function navigate(path) {
 }
 ```
 
-Este método primeiro atualiza o URL atual com base no caminho fornecido e, em seguida, atualiza o modelo. A propriedade `window.location.origin` retorna a raiz da URL, permitindo-nos reconstruir uma URL completa a partir de um determinado caminho.
+Este método primeiro atualiza o URL atual com base no caminho fornecido e, em seguida, atualiza o template. A propriedade `window.location.origin` retorna a raiz da URL, permitindo-nos reconstruir uma URL completa a partir de um determinado caminho.
 
 Agora que temos esta função, podemos resolver o problema que temos se um caminho não corresponder a nenhuma rota definida. Modificaremos a função `updateRoute` adicionando um substituto a uma das rotas existentes se não conseguirmos encontrar uma correspondência.
 
@@ -264,13 +264,13 @@ Tente clicar nesses links, agora você poderá navegar entre as diferentes telas
 
 Usar `history.pushState` cria novas entradas no histórico de navegação do navegador.
 
-Se você tentar clicar no botão Voltar algumas vezes, verá que o URL atual muda e o histórico é atualizado, mas o mesmo modelo continua sendo exibido.
+Se você tentar clicar no botão Voltar algumas vezes, verá que o URL atual muda e o histórico é atualizado, mas o mesmo template continua sendo exibido.
 
 Isso ocorre porque a aplicação não sabe que precisamos chamar `updateRoute()` toda vez que o histórico mudar. Se você der uma olhada na [documentação `history.pushState`](https://developer.mozilla.org/docs/Web/API/History/pushState), você pode ver isso se o estado mudar - o que significa que mudamos para um URL diferente - o evento [`popstate`](https://developer.mozilla.org/docs/Web/API/Window/popstate_event) foi acionado. Usaremos isso para corrigir esse problema.
 
 ### Tarefa
 
-Para garantir que o modelo exibido seja atualizado quando o histórico do navegador for alterado, anexaremos uma nova função que chama `updateRoute()`. Faremos isso na parte inferior do nosso arquivo `app.js`:
+Para garantir que o template exibido seja atualizado quando o histórico do navegador for alterado, anexaremos uma nova função que chama `updateRoute()`. Faremos isso na parte inferior do nosso arquivo `app.js`:
 
 ```js
 window.onpopstate = () => updateRoute();
@@ -289,7 +289,7 @@ Agora tente usar os botões voltar e avançar do seu navegador e verifique se a 
 
 ## 🚀 Desafio!
 
-Adicione um novo modelo e direcione para uma terceira página que mostre os créditos deste aplicativo.
+Adicione um novo template e direcione para uma terceira página que mostre os créditos deste aplicativo.
 
 ## Quiz pós-lição
 
@@ -297,4 +297,4 @@ Adicione um novo modelo e direcione para uma terceira página que mostre os cré
 
 ## Revisão & auto estudo
 
-O roteamento é uma das partes surpreendentemente complicadas do desenvolvimento web, especialmente à medida que a web passa de comportamentos de atualização de página para atualizações de página de aplicativo de página única. Leia um pouco sobre [how the Azure Static Web App service](https://docs.microsoft.com/azure/static-web-apps/routes/?WT.mc_id=academic-77807-sagibbon) resolvendo roteamento. Você pode explicar por que algumas das decisões descritas nesse documento são necessárias?
+Adicione outros templates com coisas diferentes (imagens? links? use a criatividade), não esqueça de criar uma navegação para acessar essas páginas e voltar para a tela inicial!
