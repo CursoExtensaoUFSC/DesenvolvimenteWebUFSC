@@ -82,15 +82,15 @@ Essa refatoração por si só não trouxe muitas melhorias, mas a ideia era lan�
 
 Agora que implementamos o objeto `state` para armazenar nossos dados, o próximo passo é centralizar as atualizações. O objetivo é tornar mais fácil acompanhar quaisquer alterações e quando elas acontecem.
 
-To avoid having changes made to the `state` object, it's also a good practice to consider it [*immutable*](https://en.wikipedia.org/wiki/Immutable_object), meaning that it cannot be modified at all. It also means that you have to create a new state object if you want to change anything in it. By doing this, you build a protection about potentially unwanted [side effects](https://en.wikipedia.org/wiki/Side_effect_(computer_science)), and open up possibilities for new features in your app like implementing undo/redo, while also making it easier to debug. For example, you could log every change made to the state and keep a history of the changes to understand the source of a bug.
+Para evitar alterações no objeto `state`, também é uma boa prática considerá-lo [*imutável*](https://en.wikipedia.org/wiki/Immutable_object), o que significa que não pode ser modificado de forma alguma. Isso também significa que você terá que criar um novo objeto de estado se quiser alterar alguma coisa nele. Ao fazer isso, você cria uma proteção contra [efeitos colaterais](https://en.wikipedia.org/wiki/Side_effect_(computer_science)) potencialmente indesejados, e abre possibilidades para novos recursos em seu aplicativo, como implementar desfazer/refazer, ao mesmo tempo que facilita a depuração. Por exemplo, você pode registrar todas as alterações feitas no estado e manter um histórico das alterações para entender a origem de um bug.
 
-In JavaScript, you can use [`Object.freeze()`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze) to create an immutable version of an object. If you try to make changes to an immutable object, an exception will be raised.
+Em JavaScript, você pode usar [`Object.freeze()`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze) para criar uma versão imutável de um objeto. Se você tentar fazer alterações em um objeto imutável, uma exceção será gerada.
 
-✅ Do you know the difference between a *shallow* and a *deep* immutable object? You can read about it [here](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze#What_is_shallow_freeze).
+✅ Você sabe a diferença entre um objeto imutável *superficial* e um objeto *profundo*? Você pode ler sobre isso [aqui](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze#What_is_shallow_freeze).
 
-### Task
+### Tarefa
 
-Let's create a new `updateState()` function:
+Vamos criar uma nova função `updateState()`:
 
 ```js
 function updateState(property, newData) {
@@ -101,9 +101,9 @@ function updateState(property, newData) {
 }
 ```
 
-In this function, we're creating a new state object and copy data from the previous state using the [*spread (`...`) operator*](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/Spread_syntax#Spread_in_object_literals). Then we override a particular property of the state object with the new data using the [bracket notation](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Working_with_Objects#Objects_and_properties) `[property]` for assignment. Finally, we lock the object to prevent modifications using `Object.freeze()`. We only have the `account` property stored in the state for now, but with this approach you can add as many properties as you need in the state.
+Nesta função, estamos criando um novo objeto de estado e copiando os dados do estado anterior usando o [*operador de espalhamento (`...`)*](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/Spread_syntax#Spread_in_object_literals). Em seguida, substituímos uma propriedade específica do objeto de estado pelos novos dados usando a [notação de colchetes](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Working_with_Objects#Objects_and_properties) `[property]` para atribuição. Finalmente, bloqueamos o objeto para evitar modificações usando `Object.freeze()`. Por enquanto, temos apenas a propriedade `account` armazenada no estado, mas com essa abordagem você pode adicionar quantas propriedades precisar no estado.
 
-We'll also update the `state` initialization to make sure the initial state is frozen too:
+Também atualizaremos a inicialização do `state` para garantir que o estado inicial também esteja congelado:
 
 ```js
 let state = Object.freeze({
@@ -111,21 +111,21 @@ let state = Object.freeze({
 });
 ```
 
-After that, update the `register` function by replacing the `state.account = result;` assignment with:
+Depois disso, atualize a função `register` substituindo a atribuição `state.account = result;` por:
 
 ```js
 updateState('account', result);
 ```
 
-Do the same with the `login` function, replacing `state.account = data;` with:
+Faça o mesmo com a função `login`, substituindo `state.account = data;` por:
 
 ```js
 updateState('account', data);
 ```
 
-We'll now take the chance to fix the issue of account data not being cleared when the user clicks on *Logout*.
+Aproveitaremos agora para corrigir o problema de os dados da conta não serem apagados quando o usuário clica em *Sair*.
 
-Create a new function `logout()`:
+Crie uma nova função `logout()`:
 
 ```js
 function logout() {
@@ -134,49 +134,49 @@ function logout() {
 }
 ```
 
-In `updateDashboard()`, replace the redirection `return navigate('/login');` with `return logout()`;
+Em `updateDashboard()`, substitua o redirecionamento `return navigate('/login');` por `return logout()`;
 
-Try registering a new account, logging out and in again to check that everything still works correctly.
+Experimente registrar uma nova conta, sair e entrar novamente para verificar se tudo ainda funciona corretamente.
 
-> Tip: you can take a look at all state changes by adding `console.log(state)` at the bottom of `updateState()` and opening up the console in your browser's development tools.
+> Dica: você pode dar uma olhada em todas as mudanças de estado adicionando `console.log(state)` na parte inferior de `updateState()` e abrindo o console nas ferramentas de desenvolvimento do seu navegador.
 
-## Persist the state
+## Persistir o Estado
 
-Most web apps needs to persist data to be able to work correctly. All the critical data is usually stored on a database and accessed via a server API, like as the user account data in our case. But sometimes, it's also interesting to persist some data on the client app that's running in your browser, for a better user experience or to improve loading performance.
+A maioria dos aplicativos da web precisa persistir os dados para funcionar corretamente. Todos os dados críticos são geralmente armazenados em um banco de dados e acessados ​​por meio de uma API de servidor, como os dados da conta do usuário no nosso caso. Mas às vezes também é interessante persistir alguns dados no aplicativo cliente que está rodando no seu navegador, para uma melhor experiência do usuário ou para melhorar o desempenho de carregamento.
 
-When you want to persist data in your browser, there are a few important questions you should ask yourself:
+Quando você deseja manter dados em seu navegador, há algumas perguntas importantes que você deve se fazer:
 
-- *Is the data sensitive?* You should avoid storing any sensitive data on client, such as user passwords.
-- *For how long do you need to keep this data?* Do you plan to access this data only for the current session or do you want it to be stored forever?
+- *Os dados são confidenciais?* Você deve evitar armazenar dados confidenciais no cliente, como senhas de usuários.
+- *Por quanto tempo você precisa manter esses dados?* Você planeja acessar esses dados apenas para a sessão atual ou deseja que eles sejam armazenados para sempre?
 
-There are multiple ways of storing information inside a web app, depending on what you want to achieve. For example, you can use the URLs to store a search query, and make it shareable between users. You can also use [HTTP cookies](https://developer.mozilla.org/docs/Web/HTTP/Cookies) if the data needs to be shared with the server, like [authentication](https://en.wikipedia.org/wiki/Authentication) information.
+Existem várias maneiras de armazenar informações dentro de um aplicativo da web, dependendo do que você deseja alcançar. Por exemplo, você pode usar URLs para armazenar uma consulta de pesquisa e torná-la compartilhável entre usuários. Você também pode usar [cookies HTTP](https://developer.mozilla.org/docs/Web/HTTP/Cookies) se os dados precisarem ser compartilhados com o servidor, como informações de [autenticação](https://en.wikipedia.org/wiki/Authentication).
 
-Another option is to use one of the many browser APIs for storing data. Two of them are particularly interesting:
+Outra opção é usar uma das muitas APIs do navegador para armazenar dados. Dois deles são particularmente interessantes:
 
-- [`localStorage`](https://developer.mozilla.org/docs/Web/API/Window/localStorage): a [Key/Value store](https://en.wikipedia.org/wiki/Key%E2%80%93value_database) allowing to persist data specific to the current web site across different sessions. The data saved in it never expires.
-- [`sessionStorage`](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage): this one is works the same as `localStorage` except that the data stored in it is cleared when the session ends (when the browser is closed).
+- [`localStorage`](https://developer.mozilla.org/docs/Web/API/Window/localStorage): um [armazenamento de Key/Value](https://en.wikipedia.org/wiki/Key%E2%80%93value_database) permitindo persistir dados específicos do site atual em diferentes sessões. Os dados salvos nele nunca expiram.
+- [`sessionStorage`](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage): este funciona da mesma forma que `localStorage` exceto que os dados armazenados nele são apagados quando a sessão termina (quando o navegador é fechado).
 
-Note that both these APIs only allow to store [strings](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String). If you want to store complex objects, you will need to serialize it to the [JSON](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/JSON) format using [`JSON.stringify()`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify).
+Observe que ambas as APIs permitem apenas armazenar [strings](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String). Se você quiser armazenar objetos complexos, você precisará serializá-los para o formato [JSON](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/JSON) usando [`JSON.stringify()`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify).
 
-✅ If you want to create a web app that does not work with a server, it's also possible to create a database on the client using the [`IndexedDB` API](https://developer.mozilla.org/docs/Web/API/IndexedDB_API). This one is reserved for advanced use cases or if you need to store significant amount of data, as it's more complex to use.
+✅ Se você deseja criar uma aplicação web que não funcione com um servidor, também é possível criar um banco de dados no cliente usando o comando [`IndexedDB` API](https://developer.mozilla.org/docs/Web/API/IndexedDB_API). Este é reservado para casos de uso avançados ou se você precisar armazenar uma quantidade significativa de dados, pois é mais complexo de usar.
 
-### Task
+### Tarefa
 
-We want our users stay logged in until they explicitly click on the *Logout* button, so we'll use `localStorage` to store the account data. First, let's define a key that we'll use to store our data.
+Queremos que nossos usuários permaneçam logados até clicarem explicitamente no botão *Logout*, então usaremos `localStorage` para armazenar os dados da conta. Primeiro, vamos definir uma chave que usaremos para armazenar nossos dados.
 
 ```js
 const storageKey = 'savedAccount';
 ```
 
-Then add this line at the end of the `updateState()` function:
+Em seguida, adicione esta linha no final da função `updateState()`:
 
 ```js
 localStorage.setItem(storageKey, JSON.stringify(state.account));
 ```
 
-With this, the user account data will be persisted and always up-to-date as we centralized previously all our state updates. This is where we begin to benefit from all our previous refactors 🙂.
+Com isso, os dados da conta do usuário serão persistidos e sempre atualizados, pois centralizamos previamente todas as nossas atualizações de estado. É aqui que começamos a nos beneficiar de todos os nossos refatoradores anteriores 🙂.
 
-As the data is saved, we also have to take care of restoring it when the app is loaded. Since we'll begin to have more initialization code it may be a good idea to create a new `init` function, that also includes our previous code at the bottom of `app.js`:
+À medida que os dados são salvos, também temos que cuidar de restaurá-los quando o aplicativo é carregado. Como começaremos a ter mais código de inicialização, pode ser uma boa ideia criar uma nova função `init`, que também inclua nosso código anterior na parte inferior do `app.js`:
 
 ```js
 function init() {
@@ -193,17 +193,17 @@ function init() {
 init();
 ```
 
-Here we retrieve the saved data, and if there's any we update the state accordingly. It's important to do this *before* updating the route, as there might be code relying on the state during the page update.
+Aqui recuperamos os dados salvos e, se houver, atualizamos o estado de acordo. É importante fazer isso *antes* de atualizar a rota, pois pode haver código dependendo do estado durante a atualização da página.
 
-We can also make the *Dashboard* page our application default page, as we are now persisting the account data. If no data is found, the dashboard takes care of redirecting to the *Login* page anyways. In `updateRoute()`, replace the fallback `return navigate('/login');` with `return navigate('/dashboard');`.
+Também podemos tornar a página *Dashboard* a página padrão do aplicativo, pois agora estamos persistindo os dados da conta. Se nenhum dado for encontrado, o painel se encarrega de redirecionar para a página *Login* de qualquer maneira. Em `updateRoute()`, substitua o substituto `return navigate('/login');` por `return navigate('/dashboard');`.
 
-Now login in the app and try refreshing the page. You should stay on the dashboard. With that update we've taken care of all our initial issues...
+Agora faça login no aplicativo e tente atualizar a página. Você deve permanecer no painel. Com essa atualização, resolvemos todos os nossos problemas iniciais...
 
-## Refresh the data
+## Atualize os dados
 
-...But we might also have a created a new one. Oops!
+...Mas também podemos ter criado um novo. Ops!
 
-Go to the dashboard using the `test` account, then run this command on a terminal to create a new transaction:
+Vá para o painel usando a conta `test` e execute este comando em um terminal para criar uma nova transação:
 
 ```sh
 curl --request POST \
@@ -212,15 +212,15 @@ curl --request POST \
      http://localhost:5000/api/accounts/test/transactions
 ```
 
-Try refreshing your the dashboard page in the browser now. What happens? Do you see the new transaction?
+Tente atualizar a página do painel no navegador agora. O que acontece? Você vê a nova transação?
 
-The state is persisted indefinitely thanks to the `localStorage`, but that also means it's never updated until you log out of the app and log in again!
+O estado persiste indefinidamente graças ao `localStorage`, mas isso também significa que ele nunca é atualizado até que você saia do aplicativo e faça login novamente!
 
-One possible strategy to fix that is to reload the account data every time the dashboard is loaded, to avoid stall data.
+Uma estratégia possível para corrigir isso é recarregar os dados da conta toda vez que o painel é carregado, para evitar travamento de dados.
 
-### Task
+### Tarefa
 
-Create a new function `updateAccountData`:
+Crie uma nova função `updateAccountData`:
 
 ```js
 async function updateAccountData() {
@@ -238,9 +238,9 @@ async function updateAccountData() {
 }
 ```
 
-This method checks that we are currently logged in then reloads the account data from the server.
+Este método verifica se estamos logados no momento e recarrega os dados da conta do servidor.
 
-Create another function named `refresh`:
+Crie outra função chamada `refresh`:
 
 ```js
 async function refresh() {
@@ -249,7 +249,7 @@ async function refresh() {
 }
 ```
 
-This one updates the account data, then takes care of updating the HTML of the dashboard page. It's what we need to call when the dashboard route is loaded. Update the route definition with:
+Este atualiza os dados da conta e depois se encarrega de atualizar o HTML da página do painel. É o que precisamos chamar quando a rota do painel for carregada. Atualize a definição da rota com:
 
 ```js
 const routes = {
@@ -258,24 +258,49 @@ const routes = {
 };
 ```
 
-Try reloading the dashboard now, it should display the updated account data.
+Tente recarregar o painel agora, ele deverá exibir os dados atualizados da conta.
 
 ---
 
-## 🚀 Challenge
+## 🚀 Desafio
 
-Now that we reload the account data every time the dashboard is loaded, do you think we still need to persist *all the account* data?
+Agora que recarregamos os dados da conta sempre que o painel é carregado, você acha que ainda precisamos persistir *todos os dados da conta*?
 
-Try working together to change what is saved and loaded from `localStorage` to only include what is absolutely required for the app to work.
+Tente trabalhar em conjunto para alterar o que é salvo e carregado em `localStorage` para incluir apenas o que é absolutamente necessário para o funcionamento do aplicativo.
 
-## Post-Lecture Quiz
+## Quiz pós-lição
 
 [Quiz pós-lição](https://ashy-river-0debb7803.1.azurestaticapps.net/quiz/48)
 
-## Assignment
+## Atribuição
 
-[Implement "Add transaction" dialog](assignment.md)
+# Implement "Add transaction" dialog
+
+## Instructions
+
+Our bank app is still missing one important feature: the possibility to enter new transactions.
+Using everything that you've learnt in the four previous lessons, implement an "Add transaction" dialog:
+
+- Add an "Add transaction" button in the dashboard page
+- Either create a new page with an HTML template, or use JavaScript to show/hide the dialog HTML without leaving the dashboard page (you can use [`hidden`](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/hidden) property for that, or CSS classes)
+- Make sure you handle [keyboard and screen reader accessibility](https://developer.paciellogroup.com/blog/2018/06/the-current-state-of-modal-dialog-accessibility/) for the dialog
+- Implement an HTML form to receive input data
+- Create JSON data from the form data and send it to the API
+- Update the dashboard page with the new data
+
+Look at the [server API specifications](../api/README.md) to see which API you need to call and what is the expected JSON format.
 
 Here's an example result after completing the assignment:
 
-![Screenshot showing an example "Add transaction" dialog](./images/dialog.png)
+![Screenshot showing an example "Add transaction" dialog](../images/dialog.png)
+
+## Rubric
+
+| Criteria | Exemplary                                                                                        | Adequate                                                                                                                | Needs Improvement                           |
+| -------- | ------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------- | --------------------------------------------|
+|          | Adding a transaction is implemented completely following all best practices seen in the lessons. | Adding a transaction is implement, but not following the best practices seen in the lessons, or working only partially. | Adding a transaction is not working at all. |
+
+
+Here's an example result after completing the assignment:
+
+![Screenshot showing an example "Add transaction" dialog](../images/dialog.png)
