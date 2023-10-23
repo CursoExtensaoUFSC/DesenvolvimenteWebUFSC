@@ -274,33 +274,28 @@ Tente trabalhar em conjunto para alterar o que é salvo e carregado em `localSto
 
 ## Atribuição
 
-# Implement "Add transaction" dialog
+# Implementar a caixa de diálogo "Adicionar transação"
 
-## Instructions
+## Instruções
 
-Our bank app is still missing one important feature: the possibility to enter new transactions.
-Using everything that you've learnt in the four previous lessons, implement an "Add transaction" dialog:
+Nosso aplicativo bancário ainda carece de um recurso importante: a possibilidade de inserir novas transações.
+Usando tudo o que você aprendeu nas quatro lições anteriores, implemente uma caixa de diálogo "Adicionar transação":
 
-- Add an "Add transaction" button in the dashboard page
-- Either create a new page with an HTML template, or use JavaScript to show/hide the dialog HTML without leaving the dashboard page (you can use [`hidden`](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/hidden) property for that, or CSS classes)
-- Make sure you handle [keyboard and screen reader accessibility](https://developer.paciellogroup.com/blog/2018/06/the-current-state-of-modal-dialog-accessibility/) for the dialog
-- Implement an HTML form to receive input data
-- Create JSON data from the form data and send it to the API
-- Update the dashboard page with the new data
+- Adicione um botão "Adicionar transação" na página do painel
+- Crie uma nova página com um modelo HTML ou use JavaScript para mostrar/ocultar a caixa de diálogo HTML sem sair da página do painel (você pode usar a propriedade [`hidden`](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/hidden) para isso, ou classes CSS)
+- Implementar um formulário HTML para receber dados de entrada
+- Crie dados JSON a partir dos dados do formulário e envie-os para a API
+- Atualize a página do painel com os novos dados
 
-Look at the [server API specifications](../api/README.md) to see which API you need to call and what is the expected JSON format.
+Consulte as [especificações da API do servidor](../api/README.md) para ver qual API você precisa chamar e qual é o formato JSON esperado.
 
-Here's an example result after completing the assignment:
+## Gabarito
 
-![Screenshot showing an example "Add transaction" dialog](../images/dialog.png)
-
-## Rubric
-
-| Criteria | Exemplary                                                                                        | Adequate                                                                                                                | Needs Improvement                           |
+| Criterio | Exemplar                                                                                        | Adequado                                                                                                                | Precisa de Melhorias                           |
 | -------- | ------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------- | --------------------------------------------|
-|          | Adding a transaction is implemented completely following all best practices seen in the lessons. | Adding a transaction is implement, but not following the best practices seen in the lessons, or working only partially. | Adding a transaction is not working at all. |
+|          | A adição de uma transação é implementada completamente seguindo todas as práticas recomendadas vistas nas lições. | Adicionar uma transação é implementado, mas não segue as melhores práticas vistas nas lições, ou funciona apenas parcialmente. | Adicionar uma transação não está funcionando. |
 
 
-Here's an example result after completing the assignment:
+Aqui está um exemplo de resultado após concluir a tarefa:
 
 ![Screenshot showing an example "Add transaction" dialog](../images/dialog.png)
