@@ -204,7 +204,7 @@ Já cuidamos da segunda parte com a função `updateRoute`, então temos que des
 
 Nós teremos que usar JavasScript e mais especificamente [`history.pushState`](https://developer.mozilla.org/docs/Web/API/History/pushState) que nos permite atualizar a URL e criar uma nova entrada no histórico do browser, sem ter que recarregar o HTML.
 
-> Nota: While the HTML anchor element Enquanto a âncora do HTML [`<a href>`](https://developer.mozilla.org/docs/Web/HTML/Element/a) pode ser usado sozinho para criar hiperlinks para diferentes URLs, fará com que o navegador recarregue o HTML por padrão. É necessário evitar esse comportamento ao tratar o roteamento com javascript customizado, utilizando a função preventDefault() no evento click.
+> Nota: Enquanto a âncora do HTML [`<a href>`](https://developer.mozilla.org/docs/Web/HTML/Element/a) pode ser usado sozinho para criar hiperlinks para diferentes URLs, fará com que o navegador recarregue o HTML por padrão. É necessário evitar esse comportamento ao tratar o roteamento com javascript customizado, utilizando a função preventDefault() no evento click.
 
 ### Tarefa
 
